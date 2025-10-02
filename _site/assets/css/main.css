@@ -4,6 +4,7 @@
 @import "container.css";    /* CONTAINER */
 @import "nav.css";          /* NAV y burger */
 @import "hero.css";         /* HERO */
+@import "pain.css"; /* PAIN */
 @import "benefits.css";     /* BENEFITS */
 @import "section-divider.css"; /* SECTION DIVIDER */
 @import "steps.css";        /* STEPS */

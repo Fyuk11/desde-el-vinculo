@@ -253,3 +253,121 @@
 @media(min-width:768px){
   .hero-ctas { flex-direction: row; justify-content: center; gap: 15px; }
 }
+
+
+/* Botón Holístico tipo FAQ */
+.btn-holistic-wrapper {
+  width: 100%;
+  max-width: 300px;
+  text-align: left;
+  overflow: hidden;
+  margin-top: 15px; /* separación del resto de los botones */
+  transition: all 0.3s ease;
+}
+
+.btn-holistic {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px 30px;
+}
+
+.btn-holistic-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-holistic-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease, margin 0.4s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-holistic-wrapper.expanded .btn-holistic-content {
+  max-height: 500px;
+  padding: 15px;
+  margin-top: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+}
+
+.btn-holistic-wrapper.expanded .btn-holistic-icon {
+  transform: rotate(45deg);
+}
+
+/* Desktop: alineación horizontal */
+@media(min-width:768px){
+  .hero-ctas { flex-direction: row; justify-content: center; gap: 15px; }
+  .btn-holistic-wrapper { margin-left: 15px; }
+}
+
+
+
+/* Hero CTA general */
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center; /* centra los botones horizontalmente */
+}
+
+/* Desktop: alineación horizontal */
+@media(min-width:768px){
+  .hero-ctas {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    align-items: flex-start; /* alineación uniforme */
+  }
+}
+
+/* Botón Holístico tipo FAQ */
+.btn-holistic-wrapper {
+  width: 100%;
+  max-width: 250px; /* igual que los otros botones */
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-holistic {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-holistic-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Contenido desplegable */
+.btn-holistic-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease, margin 0.4s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-holistic-wrapper.expanded .btn-holistic-content {
+  max-height: 250px; /* controlamos altura */
+  padding: 12px;
+  margin-top: 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+}
+
+.btn-holistic-wrapper.expanded .btn-holistic-icon {
+  transform: rotate(45deg);
+}
+
+/* Párrafo dentro del contenido */
+.btn-holistic-content p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 8px 0;
+}
