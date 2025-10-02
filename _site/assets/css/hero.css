@@ -1,13 +1,16 @@
+/* Hero general */
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 100vh; /* mínimo ocupa toda la pantalla */
+  height: auto;      /* que crezca con el contenido */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible; /* permitir que el contenido extra se muestre */
   font-family: 'Poppins', sans-serif;
   color: #fff;
 }
+
 
 /* Fondo */
 .hero-video,
@@ -345,6 +348,13 @@
 }
 
 /* Contenido desplegable */
+.btn-holistic-wrapper {
+  width: 100%;
+  max-width: 300px; /* igual que los otros botones */
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
 .btn-holistic-content {
   max-height: 0;
   overflow: hidden;
@@ -354,16 +364,13 @@
 }
 
 .btn-holistic-wrapper.expanded .btn-holistic-content {
-  max-height: 250px; /* controlamos altura */
-  padding: 12px;
-  margin-top: 8px;
+  max-height: 500px; /* ajustar según el contenido real */
+  padding: 15px;
+  margin-top: 10px;
   background: rgba(255,255,255,0.05);
   border-radius: 20px;
 }
 
-.btn-holistic-wrapper.expanded .btn-holistic-icon {
-  transform: rotate(45deg);
-}
 
 /* Párrafo dentro del contenido */
 .btn-holistic-content p {
@@ -371,3 +378,8 @@
   line-height: 1.4;
   margin: 8px 0;
 }
+
+.hero-content-wrapper {
+  transition: all 0.3s ease;
+}
+
