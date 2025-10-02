@@ -24,12 +24,18 @@ nav:
     external: true
 sections:
   - type: hero
-    title: Damos vida digital a tu marca
-    subtitle: Sitios donde tu trabajo se luzca. Creamos landing pages profesionales, rápidas y optimizadas para que vendas más desde el primer día.
-    background: /assets/images/placeholder.jpg
+    title: "Vuelve al origen de tu esencia divina"
+    subtitle: "Descubrí cómo la tecnología escalar puede ayudarte a mejorar tu bienestar físico, mental y emocional, potenciar tus terapias y transformar la salud de manera integral."
+    videos:
+      desktopWebm: "/assets/videos/heroDesktop.webm"
+      desktopMp4: "/assets/videos/heroDesktop.mp4"
+      mobileWebm: "/assets/videos/heroDeskMobile.webm"
+      mobileMp4: "/assets/videos/heroDeskMobile.mp4"
     ctas:
-      - text: Quiero mi página
-        url: "#contact"
+     - text: "Conocer más"
+       url: "#what-is"
+     - text: "Hablar por WhatsApp"
+       url: "https://wa.me/5493435616629"
 
   - type: pain
     title: "¿Te sientes identificado con alguno de estos problemas?"

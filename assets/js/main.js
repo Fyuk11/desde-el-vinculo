@@ -3,6 +3,7 @@ import { initScrollAnimations, initAboutAnimations, initContactParticles } from 
 import { initSlideshow } from "./slideshow.js";
 import { initFaqs } from './faqs.js';
 import { initContactForm } from "./form.js";
+import { initHeroDropdown } from "./hero.js";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initFaqs();
   initContactParticles();
   initContactForm();
-
+  initHeroDropdown();
 
   console.log("Landing loaded ✅");
 });
