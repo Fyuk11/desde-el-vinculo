@@ -1,0 +1,64 @@
+<section id="equipos" class="section equipos">
+  <div class="container">
+    <h2>{{ section_data.title or "Nuestros equipos" }}</h2>
+    <p>{{ section_data.subtitle or "" }}</p>
+
+    <div class="equipos-grid">
+      {% for equipo in section_data.equipos %}
+      <div class="equipo-card">
+        <!-- Icono y nombre -->
+        <div class="equipo-header">
+          <img src="{{ equipo.icon }}" alt="{{ equipo.name }}" class="equipo-icon">
+          <h3>{{ equipo.name }}</h3>
+        </div>
+
+        <!-- Descripción y precio -->
+        {% if equipo.description %}
+        <p class="equipo-description">{{ equipo.description }}</p>
+        {% endif %}
+        {% if equipo.price %}
+        <p class="equipo-price">{{ equipo.price }}</p>
+        {% endif %}
+
+        <!-- Accordion toggle -->
+        <button class="equipo-toggle">Ver detalles</button>
+
+        <!-- Contenido desplegable -->
+        <div class="equipo-content">
+          {% if equipo.details %}
+          <div class="equipo-details">
+            <h4>Detalles técnicos</h4>
+            {% for detalle in equipo.details %}
+            <div class="detalle-item">• {{ detalle }}</div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if equipo.accessories %}
+          <div class="equipo-accessories">
+            <h4>Accesorios incluidos</h4>
+            {% for acc in equipo.accessories %}
+            <div class="accessory-item">
+              {% if acc.icon %}
+              <img src="{{ acc.icon }}" alt="{{ acc.name }}" class="accessory-icon">
+              {% endif %}
+              <span>{{ acc.name }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <!-- CTA dentro del contenido -->
+          {% if equipo.cta.whatsapp %}
+          <div class="equipo-buy">
+            <a href="https://wa.me/{{ equipo.cta.whatsapp }}?text=Hola!%20Quiero%20mi%20{{ equipo.name }}" target="_blank" class="btn-whatsapp">
+              Quiero mi {{ equipo.name }}
+            </a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

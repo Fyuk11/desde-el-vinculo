@@ -25,17 +25,21 @@ nav:
 sections:
   - type: hero
     title: "Vuelve al origen de tu esencia divina"
+    subheading: "Un camino hacia tu bienestar integral con tecnología escalar"
     subtitle: "Descubrí cómo la tecnología escalar puede ayudarte a mejorar tu bienestar físico, mental y emocional, potenciar tus terapias y transformar la salud de manera integral."
     videos:
-      desktopWebm: "/assets/videos/heroDesktop.webm"
-      desktopMp4: "/assets/videos/heroDesktop.mp4"
-      mobileWebm: "/assets/videos/heroDeskMobile.webm"
-      mobileMp4: "/assets/videos/heroDeskMobile.mp4"
+     desktopWebm: "/assets/videos/heroDesktop.webm"
+     desktopMp4: "/assets/videos/heroDesktop.mp4"
+     mobileWebm: "/assets/videos/heroDeskMobile.webm"
+     mobileMp4: "/assets/videos/heroDeskMobile.mp4"
     ctas:
      - text: "Conocer más"
        url: "#what-is"
      - text: "Hablar por WhatsApp"
        url: "https://wa.me/5493435616629"
+    holisticTitle: "Información para Centros Holísticos"
+    holisticText: "Sumá la energía escalar a tu espacio y potencia la experiencia de tus consultantes. Capacitación, soporte y beneficios exclusivos."
+
 
   - type: pain
     title: "¿Te sientes identificado con alguno de estos problemas?"
@@ -52,6 +56,118 @@ sections:
       description: "Cada vez que quieres actualizar un texto, un precio o una imagen, tienes que pedir favores, pagar caro y esperar días."
     - title: "No tienes claridad sobre qué está funcionando y qué no"
       description: "Te falta data y pruebas A/B para optimizar tu página y mejorar tus resultados de forma consistente."
+
+
+  - type: equipos
+    title: "Equipos SER"
+    subtitle: "Descubrí nuestros dispositivos y accesorios"
+    equipos:
+    - name: "SER AMOR"
+      icon: "/assets/images/ser-amor.png"
+      description: "Dispositivo de 3 Spark Gap o acelerador de partículas. Diseño en madera con tapa transparente. Electrodos de tungsteno de 6mm."
+      price: "$2.000 USD"
+      details:
+        - "Diseño: caja de madera con tapa transparente grabada, 24x44x15 cm, peso 4kg. Rejilla exterior cubre ventilación con geometría sagrada."
+        - "Alimentación: 110-220v, fuente 12v/15A, 50-60Hz."
+        - "Fuente de poder: ZVS + flyback sintonizado en resonancia, genera 30.000V."
+        - "Consumo de energía: 0.18 kW."
+        - "Banco de Capacitores: alta tensión 4,7 nf/6000v para filtrar energía."
+        - "Spark Gap externo: triple, electrodos de tungsteno de 6mm."
+        - "Sistema de control: botón metálico con LED."
+        - "Temporizador: 999 seg. (16.65 min)."
+        - "Salida magnética: 1 conector canon izquierdo."
+        - "Salida radiante: 2 conectores canon derecho."
+        - "Ventilación: 1 ventilador 120mm con LED azul."
+        - "Seguridad eléctrica: fusible interno + tecla de corte externa, conexión a tierra."
+        - "Emisores de ruido: <60dB."
+      accessories:
+        - name: "Bobina Oudin"
+          icon: "/assets/images/accesorios/bobina-oudin.png"
+        - name: "Bobina Pancake Radiante"
+          icon: "/assets/images/accesorios/bobina-pancake.png"
+        - name: "Bobina Pancake Magnética"
+          icon: "/assets/images/accesorios/bobina-magnetica.png"
+        - name: "Manguitos"
+          icon: "/assets/images/accesorios/manguitos.png"
+        - name: "Bobina Corona"
+          icon: "/assets/images/accesorios/bobina-corona.png"
+        - name: "KIT Alta Frecuencia"
+          icon: "/assets/images/accesorios/kit-alta-frecuencia.png"
+      cta:
+        whatsapp: "5491123456789"
+
+    - name: "SER ORIGEN"
+      icon: "/assets/images/ser-origen.png"
+      description: "Dispositivo de 3 Spark Gap. Diseño rígido portátil con electrodos de tungsteno de 5mm."
+      price: "$1.600 USD"
+      details:
+        - "Diseño: caja rústica PVC, 25x47x20cm, peso 3kg."
+        - "Alimentación: 110-220v, fuente 12v/15A, 50-60Hz."
+        - "Fuente de poder: ZVS + flyback, genera 30.000V."
+        - "Consumo de energía: 0.18 kW."
+        - "Banco de Capacitores: 4,7 nf/6000v."
+        - "Spark Gap externo: triple, electrodos de tungsteno de 5mm."
+        - "Sistema de control: botón PVC con LED rojo."
+        - "Temporizador: 999 seg. (16.65 min)."
+        - "Salidas: 2 magnéticas (izquierda) y 2 radiantes (derecha)."
+        - "Ventilación: 4 ventiladores 80mm LED azul."
+        - "Seguridad eléctrica: fusible interno."
+        - "Emisores de ruido: <60dB."
+      accessories:
+        - name: "Bobina Oudin Mediana"
+          icon: "/assets/images/accesorios/bobina-oudin-mediana.png"
+        - name: "Bobina Pancake Radiante"
+          icon: "/assets/images/accesorios/bobina-pancake.png"
+        - name: "Bobina Pancake Magnética"
+          icon: "/assets/images/accesorios/bobina-magnetica.png"
+        - name: "Manguitos"
+          icon: "/assets/images/accesorios/manguitos.png"
+        - name: "Bobina Corona"
+          icon: "/assets/images/accesorios/bobina-corona.png"
+        - name: "KIT Alta Frecuencia"
+          icon: "/assets/images/accesorios/kit-alta-frecuencia.png"
+      cta:
+        whatsapp: "5491123456789"
+
+    - name: "SER ESENCIA"
+      icon: "/assets/images/ser-esencia.png"
+      description: "Dispositivo de 1 Spark Gap. Diseño portátil con electrodos de tungsteno de 4mm."
+      price: "$950 USD"
+      details:
+        - "Diseño: caja rústica PVC, 25x47x20cm, peso 3kg."
+        - "Alimentación: 110-220v, fuente 12v/15A, 50-60Hz."
+        - "Fuente de poder: ZVS + flyback, genera 24.000V."
+        - "Consumo de energía: 0.18 kW."
+        - "Banco de Capacitores: 4,7 nf/2000v."
+        - "Spark Gap externo: 1 descarga simple, electrodos cruzados 4mm."
+        - "Sistema de control: botón PVC con LED rojo."
+        - "Salidas: 1 magnética (izquierda) y 1 radiante (derecha)."
+        - "Ventilación: 4 ventiladores 80mm LED azul."
+        - "Seguridad eléctrica: fusible interno."
+        - "Emisores de ruido: <60dB."
+      accessories:
+        - name: "Bobina Oudin Chica"
+          icon: "/assets/images/accesorios/bobina-oudin-chica.png"
+        - name: "Bobina Pancake Radiante"
+          icon: "/assets/images/accesorios/bobina-pancake.png"
+        - name: "Bobina Pancake Magnética"
+          icon: "/assets/images/accesorios/bobina-magnetica.png"
+        - name: "Manguitos"
+          icon: "/assets/images/accesorios/manguitos.png"
+        - name: "Bobina Corona"
+          icon: "/assets/images/accesorios/bobina-corona.png"
+      cta:
+        whatsapp: "5491123456789"
+
+
+
+
+
+
+
+
+
+
 
   - type: benefits
     title: Más que una landing, tu identidad digital

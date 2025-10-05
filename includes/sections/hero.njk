@@ -17,40 +17,49 @@
 
   <div class="hero-content-wrapper">
     <div class="hero-content">
+      <!-- Título principal -->
       <h1 class="fade-left animate-on-scroll">
         {{ section_data.title or landing.title }}
       </h1>
-      <p class="fade-left delay-1 animate-on-scroll">
+
+      <!-- Subtítulo opcional -->
+      {% if section_data.subheading %}
+      <h2 class="fade-left delay-1 animate-on-scroll hero-subtitle">
+        {{ section_data.subheading }}
+      </h2>
+      {% endif %}
+
+      <!-- Párrafo descriptivo -->
+      <p class="fade-left delay-2 animate-on-scroll">
         {{ section_data.subtitle or landing.description }}
       </p>
 
       {% if section_data.ctas %}
-<div class="hero-ctas">
+      <div class="hero-ctas">
 
-  {% for cta in section_data.ctas %}
-    <a href="{{ cta.url }}"
-       class="btn-primary fade-left delay-{{ loop.index }} scroll-link animate-on-scroll"
-       {% if "http" in cta.url %} target="_blank" rel="noopener noreferrer"{% endif %}>
-      {{ cta.text }}
-    </a>
-  {% endfor %}
+        {% for cta in section_data.ctas %}
+        <a href="{{ cta.url }}"
+           class="btn-primary fade-left delay-{{ loop.index + 2 }} scroll-link animate-on-scroll"
+           {% if "http" in cta.url %} target="_blank" rel="noopener noreferrer"{% endif %}>
+          {{ cta.text }}
+        </a>
+        {% endfor %}
 
-  <!-- Botón Holístico independiente -->
-  <div class="btn-holistic-wrapper fade-left delay-{{ section_data.ctas | length + 1 }} animate-on-scroll">
-    <button class="btn-primary btn-holistic">
-      Soy centro holístico <span class="btn-holistic-icon">▼</span>
-    </button>
-    <div class="btn-holistic-content">
-      <h3>{{ section_data.holisticTitle or "Información para Centros Holísticos" }}</h3>
-      <p>{{ section_data.holisticText or "Sumá la energía escalar a tu espacio y potencia la experiencia de tus consultantes. Capacitación, soporte y beneficios exclusivos." }}</p>
-      <a href="https://wa.me/5493435616629" target="_blank" class="btn-primary">
-        Solicitar más info
-      </a>
-    </div>
-  </div>
+        <!-- Botón Holístico desplegable -->
+        <div class="btn-holistic-wrapper fade-left delay-{{ section_data.ctas | length + 3 }} animate-on-scroll">
+          <button class="btn-primary btn-holistic">
+            Soy centro holístico <span class="btn-holistic-icon">▼</span>
+          </button>
+          <div class="btn-holistic-content">
+            <h3>{{ section_data.holisticTitle or "Información para Centros Holísticos" }}</h3>
+            <p>{{ section_data.holisticText or "Sumá la energía escalar a tu espacio y potencia la experiencia de tus consultantes. Capacitación, soporte y beneficios exclusivos." }}</p>
+            <a href="https://wa.me/5493435616629" target="_blank" class="btn-primary">
+              Solicitar más info
+            </a>
+          </div>
+        </div>
 
-</div>
-
+      </div>
       {% endif %}
     </div>
   </div>

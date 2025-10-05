@@ -4,6 +4,7 @@ import { initSlideshow } from "./slideshow.js";
 import { initFaqs } from './faqs.js';
 import { initContactForm } from "./form.js";
 import { initHeroDropdown } from "./hero.js";
+import { initEquipos } from './equipos.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactParticles();
   initContactForm();
   initHeroDropdown();
+  initEquipos();
 
   console.log("Landing loaded ✅");
 });
