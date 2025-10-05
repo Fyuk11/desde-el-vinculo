@@ -2,11 +2,12 @@
   <div class="container">
     <h2>{{ section_data.title or "Nuestros equipos" }}</h2>
     <p>{{ section_data.subtitle or "" }}</p>
+    <br>
 
     <div class="equipos-grid">
       {% for equipo in section_data.equipos %}
       <div class="equipo-card">
-        <!-- Icono y nombre -->
+        <!-- Header: icono + nombre -->
         <div class="equipo-header">
           <img src="{{ equipo.icon }}" alt="{{ equipo.name }}" class="equipo-icon">
           <h3>{{ equipo.name }}</h3>
@@ -49,12 +50,14 @@
           {% endif %}
 
           <!-- CTA dentro del contenido -->
-          {% if equipo.cta.whatsapp %}
-          <div class="equipo-buy">
-            <a href="https://wa.me/{{ equipo.cta.whatsapp }}?text=Hola!%20Quiero%20mi%20{{ equipo.name }}" target="_blank" class="btn-whatsapp">
-              Quiero mi {{ equipo.name }}
-            </a>
-          </div>
+          {% if equipo.cta and equipo.cta.whatsapp %}
+            {% set ctaTitle = equipo.cta['title'] or "Quiero mi " ~ equipo.name %}
+            <div class="equipo-buy">
+              <a href="https://wa.me/{{ equipo.cta.whatsapp }}?text=Hola!%20Quiero%20mi%20{{ equipo.name }}" 
+                 target="_blank" class="btn-whatsapp">
+                {{ ctaTitle }}
+              </a>
+            </div>
           {% endif %}
         </div>
       </div>

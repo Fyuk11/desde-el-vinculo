@@ -61,6 +61,8 @@ sections:
   - type: equipos
     title: "Equipos SER"
     subtitle: "Descubrí nuestros dispositivos y accesorios"
+    cta:
+      title: "Quiero mi equipo"
     equipos:
     - name: "SER AMOR"
       icon: "/assets/images/ser-amor.png"
@@ -95,6 +97,7 @@ sections:
           icon: "/assets/images/accesorios/kit-alta-frecuencia.png"
       cta:
         whatsapp: "5491123456789"
+        title: "Quiero mi equipo"
 
     - name: "SER ORIGEN"
       icon: "/assets/images/ser-origen.png"
@@ -128,6 +131,7 @@ sections:
           icon: "/assets/images/accesorios/kit-alta-frecuencia.png"
       cta:
         whatsapp: "5491123456789"
+        title: "Quiero mi equipo"
 
     - name: "SER ESENCIA"
       icon: "/assets/images/ser-esencia.png"
@@ -158,6 +162,8 @@ sections:
           icon: "/assets/images/accesorios/bobina-corona.png"
       cta:
         whatsapp: "5491123456789"
+        title: "Quiero mi equipo 222"
+
 
 
 
