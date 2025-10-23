@@ -539,3 +539,20 @@ section {
     height: fill-available;
   }
 }
+
+/* =======================
+   FIX CRÍTICO: BURGER VISIBLE EN MÓVIL
+   Agregar esto al FINAL del archivo
+======================= */
+
+@media (max-width: 768px) {
+  /* Ocultar menú desktop en móvil */
+  .nav--venta .nav__menu:not(.active) {
+    display: none !important;
+  }
+  
+  /* Mostrar burger toggle en móvil */
+  .nav--venta .nav__toggle {
+    display: flex !important;
+  }
+}
