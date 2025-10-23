@@ -1,4 +1,4 @@
-{# partials/nav.njk - Con logo dinámico #}
+{# partials/nav.njk - Con nombre responsive #}
 <nav class="nav--venta" id="mainNav">
   <div class="nav__overlay"></div>
   <div class="nav__inner">
@@ -6,11 +6,12 @@
     <!-- Brand con Logo dinámico -->
     <a href="#hero" class="nav__brand scroll-link">
       {% if landing.logo %}
-        <img src="{{ landing.logo }}" alt="Educando desde el Vínculo" class="nav__logo">
+        <img src="{{ landing.logo }}" alt="Desde el Vínculo" class="nav__logo">
       {% else %}
         <i class="fas fa-paw nav__icon"></i>
       {% endif %}
-      <span class="nav__brand-text">Educando desde el Vínculo</span>
+      <span class="nav__brand-text nav__brand-full">Educando desde el Vínculo</span>
+      <span class="nav__brand-text nav__brand-short">Desde el Vínculo</span>
     </a>
 
     <!-- Menú principal -->
