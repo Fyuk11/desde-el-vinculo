@@ -266,71 +266,8 @@
 ======================= */
 
 /* 📱 Mobile Pequeño (hasta 480px) */
-@media (max-width: 480px) {
-  .nav--venta .nav__inner {
-    padding: 0.8rem 15px;
-  }
-  
-  .nav__logo {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .nav__icon {
-    font-size: 1.2rem;
-  }
-  
-  .nav__brand-full {
-    display: none;
-  }
-  
-  .nav__brand-short {
-    display: block;
-    font-size: 1rem;
-  }
-  
-  /* OCULTAR menú desktop, MOSTRAR burger en móvil */
-  .nav--venta .nav__menu {
-    display: none; /* Oculta menú desktop en móvil */
-  }
-  
-  .nav--venta .nav__toggle {
-    display: flex; /* Muestra burger en móvil */
-  }
-}
-
-/* 📱 Mobile Grande (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .nav--venta .nav__inner {
-    padding: 1rem 20px;
-  }
-  
-  .nav__logo {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .nav__brand-full {
-    display: none;
-  }
-  
-  .nav__brand-short {
-    display: block;
-    font-size: 1.1rem;
-  }
-  
-  /* OCULTAR menú desktop, MOSTRAR burger en tablet pequeña */
-  .nav--venta .nav__menu {
-    display: none;
-  }
-  
-  .nav--venta .nav__toggle {
-    display: flex;
-  }
-}
-
 /* =======================
-   MENÚ MÓVIL (para ambos breakpoints móviles)
+   MENÚ MÓVIL MEJORADO - CON SCROLL
 ======================= */
 
 @media (max-width: 768px) {
@@ -345,12 +282,25 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 80px 2rem 2rem;
+    padding: 80px 0 2rem 0; /* Cambiamos padding para mejor scroll */
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1100;
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
     border-left: 1px solid rgba(39, 174, 96, 0.1);
-    display: flex; /* Mostrar cuando esté activo */
+    display: flex;
+    
+    /* 🔥 NUEVO: Scroll vertical */
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+  }
+
+  /* Contenedor interno para mejor organización */
+  .nav--venta .nav__menu::before {
+    content: '';
+    display: block;
+    padding: 0 2rem;
+    width: 100%;
   }
 
   .nav--venta .nav__menu.active {
@@ -360,19 +310,22 @@
   .nav--venta .nav__menu li {
     width: 100%;
     border-bottom: 1px solid rgba(39, 174, 96, 0.1);
+    padding: 0 2rem; /* Padding interno para los items */
   }
 
   .nav--venta .nav__menu li:last-child {
     border-bottom: none;
     margin-top: 1rem;
+    padding-bottom: 2rem; /* Espacio extra al final */
   }
 
   .nav--venta .nav__menu li a {
     display: block;
-    padding: 1rem 0;
+    padding: 1.2rem 0; /* Más espacio táctil */
     font-size: 1.1rem;
     color: #2c3e50;
     width: 100%;
+    transition: all 0.3s ease;
   }
 
   .nav--venta .nav__menu li a::after {
@@ -382,16 +335,49 @@
   .nav--venta .nav__menu li a:hover {
     color: #27ae60;
     padding-left: 0.5rem;
+    background: rgba(39, 174, 96, 0.05);
   }
 
+  /* Botón "Comprar" más destacado en móvil */
   .nav--venta .nav__menu li:last-child a {
     text-align: center;
     margin-top: 1rem;
     border-radius: 12px;
-    padding: 1rem 1.5rem;
+    padding: 1.2rem 1.5rem;
+    background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+    transition: all 0.3s ease;
   }
 
-  /* Overlay para fondo cuando el menú está abierto */
+  .nav--venta .nav__menu li:last-child a:hover {
+    background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+    padding-left: 1.5rem; /* Reset del padding-left del hover general */
+  }
+
+  /* Scrollbar personalizada para el menú móvil */
+  .nav--venta .nav__menu::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .nav--venta .nav__menu::-webkit-scrollbar-track {
+    background: rgba(39, 174, 96, 0.1);
+    border-radius: 2px;
+  }
+
+  .nav--venta .nav__menu::-webkit-scrollbar-thumb {
+    background: #27ae60;
+    border-radius: 2px;
+  }
+
+  .nav--venta .nav__menu::-webkit-scrollbar-thumb:hover {
+    background: #229954;
+  }
+
+  /* Overlay mejorado */
   .nav--venta .nav__overlay {
     position: fixed;
     top: 0;
@@ -404,6 +390,7 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
   }
 
   .nav--venta .nav__overlay.active {
@@ -411,6 +398,57 @@
     visibility: visible;
   }
 }
+
+/* =======================
+   MEJORAS ADICIONALES PARA MÓVIL
+======================= */
+
+@media (max-width: 480px) {
+  /* Menú un poco más ancho en móviles pequeños */
+  .nav--venta .nav__menu {
+    width: 85vw;
+    max-width: 300px;
+  }
+  
+  /* Items más compactos pero con buen espacio táctil */
+  .nav--venta .nav__menu li a {
+    padding: 1rem 0;
+  }
+  
+  .nav--venta .nav__menu li:last-child a {
+    padding: 1rem 1.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* =======================
+   ANIMACIÓN DE ENTRADA MEJORADA
+======================= */
+
+@keyframes slideInMenu {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nav--venta .nav__menu.active li {
+  animation: slideInMenu 0.4s ease-out forwards;
+}
+
+/* Retraso escalonado para los items del menú */
+.nav--venta .nav__menu.active li:nth-child(1) { animation-delay: 0.1s; }
+.nav--venta .nav__menu.active li:nth-child(2) { animation-delay: 0.15s; }
+.nav--venta .nav__menu.active li:nth-child(3) { animation-delay: 0.2s; }
+.nav--venta .nav__menu.active li:nth-child(4) { animation-delay: 0.25s; }
+.nav--venta .nav__menu.active li:nth-child(5) { animation-delay: 0.3s; }
+.nav--venta .nav__menu.active li:nth-child(6) { animation-delay: 0.35s; }
+.nav--venta .nav__menu.active li:nth-child(7) { animation-delay: 0.4s; }
+.nav--venta .nav__menu.active li:nth-child(8) { animation-delay: 0.45s; }
 
 /* =======================
    TABLETS (769px - 1024px) - MENÚ DESKTOP VISIBLE

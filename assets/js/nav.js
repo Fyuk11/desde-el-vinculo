@@ -1,4 +1,4 @@
-// nav.js - Versión mejorada con fixes de viewport
+// nav.js - Versión mejorada con scroll en móvil
 export function initNav() {
   const nav = document.querySelector('.nav--venta');
   const navToggle = document.querySelector('.nav__toggle');
@@ -7,13 +7,6 @@ export function initNav() {
   const scrollLinks = document.querySelectorAll('.scroll-link');
 
   if (!nav) return;
-
-  // Prevenir zoom no deseado en dispositivos táctiles
-  function preventZoom(event) {
-    if (event.touches.length > 1) {
-      event.preventDefault();
-    }
-  }
 
   // Scroll effect
   function handleScroll() {
@@ -34,17 +27,10 @@ export function initNav() {
     
     if (isOpening) {
       document.body.style.overflow = 'hidden';
-      // Prevenir scroll del body cuando el menú está abierto
-      document.addEventListener('touchmove', preventScroll, { passive: false });
+      // 🔥 NUEVO: Scroll al inicio del menú cuando se abre
+      navMenu.scrollTo(0, 0);
     } else {
       document.body.style.overflow = '';
-      document.removeEventListener('touchmove', preventScroll);
-    }
-  }
-
-  function preventScroll(e) {
-    if (navMenu.classList.contains('active')) {
-      e.preventDefault();
     }
   }
 
@@ -54,7 +40,6 @@ export function initNav() {
     navMenu.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.style.overflow = '';
-    document.removeEventListener('touchmove', preventScroll);
   }
 
   // Smooth scroll for anchor links
@@ -82,13 +67,19 @@ export function initNav() {
     }
   }
 
+  // Cerrar menú al hacer click fuera (en el overlay)
+  function handleOverlayClick(e) {
+    if (e.target === navOverlay) {
+      closeMenu();
+    }
+  }
+
   // Event listeners
   window.addEventListener('scroll', handleScroll);
   window.addEventListener('resize', handleResize);
-  window.addEventListener('touchstart', preventZoom, { passive: false });
   
   navToggle.addEventListener('click', toggleMenu);
-  navOverlay.addEventListener('click', closeMenu);
+  navOverlay.addEventListener('click', handleOverlayClick);
 
   scrollLinks.forEach(link => {
     link.addEventListener('click', handleScrollClick);
@@ -97,5 +88,5 @@ export function initNav() {
   // Initial state
   handleScroll();
 
-  console.log('✅ Navegación inicializada con fixes de viewport');
+  console.log('✅ Navegación inicializada con scroll móvil');
 }
