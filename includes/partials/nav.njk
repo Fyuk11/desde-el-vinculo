@@ -1,33 +1,33 @@
-<nav class="nav nav--venta">
-  <div class="nav__inner container">
+{# partials/nav.njk - Versión actualizada #}
+<nav class="nav--venta" id="mainNav">
+  <div class="nav__overlay"></div>
+  <div class="nav__inner">
+    
     <!-- Brand -->
-    <a class="nav__brand" href="/">{{ site.name or "Landing Pro" }}</a>
+    <a href="#hero" class="nav__brand scroll-link">
+      <i class="fas fa-paw"></i>
+      Educando desde el Vínculo
+    </a>
 
-    <!-- Burger toggle (mobile) -->
+    <!-- Menú principal -->
+    <ul class="nav__menu">
+      {% for item in landing.nav %}
+      <li>
+        <a href="{{ item.url }}" 
+           class="scroll-link {% if item.external %}external-link{% endif %}"
+           {% if item.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          {{ item.text }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Burger menu -->
     <button class="nav__toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
       <span></span>
     </button>
 
-    <!-- Menú -->
-    <ul class="nav__menu" id="navMenu">
-      {% if landing.nav %}
-        {% for item in landing.nav %}
-          <li>
-            <a 
-              href="{{ item.url }}" 
-              {% if item.external %}target="_blank" rel="noopener"{% endif %}
-            >
-              {{ item.text }}
-            </a>
-          </li>
-        {% endfor %}
-      {% else %}
-        <li><a href="#hero">Inicio</a></li>
-        <li><a href="#benefits">Beneficios</a></li>
-        <li><a href="#process">Cómo funciona</a></li>
-        <li><a href="#demo">Demo</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      {% endif %}
-    </ul>
   </div>
 </nav>

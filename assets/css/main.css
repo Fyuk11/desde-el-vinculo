@@ -1,20 +1,20 @@
 /* main.css */
-@import "variables.css";    /* VARIABLES */
-@import "reset.css";        /* RESET / BASE */
-@import "container.css";    /* CONTAINER */
-@import "nav.css";          /* NAV y burger */
-@import "hero.css";         /* HERO */
-@import "pain.css"; /* PAIN */
-@import "benefits.css";     /* BENEFITS */
-@import "equipos.css";  /* EQUIPOS */
-@import "section-divider.css"; /* SECTION DIVIDER */
-@import "steps.css";        /* STEPS */
-@import "about.css";        /* ABOUT */
-@import "faqs.css"; /* FAQS */
-@import "testimonials.css"; /* TESTIMONIALS */
-@import "cta-video.css";    /* CTA VIDEO */
-@import "contact.css";      /* CONTACT */
+@import "variables.css";      /* VARIABLES */
+@import "reset.css";          /* RESET / BASE */
+@import "container.css";      /* CONTAINER */
+@import "nav.css";            /* NAV y burger */
+@import "hero.css";           /* HERO */
+@import "presentacion.css";   /* PRESENTACIÓN */
+@import "logros.css";         /* LOGROS */
+@import "sobre-creadora.css"; /* SOBRE CREADORA */ 
+@import "incluye.css";        /* INCLUYE */
+@import "pdf-regalo.css";       /* PDF-REGALO */
+@import "testimonios.css";    /* TESTIMONIOS */
+@import "faqs.css";           /* FAQS */
+@import "cierre.css";         /* CIERRE */
 @import "footer.css";       /* FOOTER */
+
+
 @import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css"; /* Font Awesome */
 
 

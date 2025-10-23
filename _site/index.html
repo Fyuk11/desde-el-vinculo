@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Landing Demo Cliente</title>
-  <meta name="description" content="Esta es una landing de prueba para mostrar secciones dinámicas.">
+  <title>Educando desde el Vínculo - Curso de Educación Canina Consciente</title>
+  <meta name="description" content="Aprendé a educar y acompañar desde el vínculo, con una mirada Sistémica, Emocional y Cognitiva. Transformá tu relación con tu perro.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://landing-demo.netlify.app/">
 
@@ -17,8 +17,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Landing Demo">
-  <meta property="og:title" content="Landing Demo Cliente">
-  <meta property="og:description" content="Esta es una landing de prueba para mostrar secciones dinámicas.">
+  <meta property="og:title" content="Educando desde el Vínculo - Curso de Educación Canina Consciente">
+  <meta property="og:description" content="Aprendé a educar y acompañar desde el vínculo, con una mirada Sistémica, Emocional y Cognitiva. Transformá tu relación con tu perro.">
   
     <meta property="og:image" content="/assets/images/default-og.png">
   
@@ -26,8 +26,8 @@
 
   <!-- Twitter cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Landing Demo Cliente">
-  <meta name="twitter:description" content="Esta es una landing de prueba para mostrar secciones dinámicas.">
+  <meta name="twitter:title" content="Educando desde el Vínculo - Curso de Educación Canina Consciente">
+  <meta name="twitter:description" content="Aprendé a educar y acompañar desde el vínculo, con una mirada Sistémica, Emocional y Cognitiva. Transformá tu relación con tu perro.">
   
     <meta name="twitter:image" content="/assets/images/default-twitter.png">
   
@@ -47,70 +47,95 @@
 </head>
 <body>
   
-    <nav class="nav nav--venta">
-  <div class="nav__inner container">
+    
+<nav class="nav--venta" id="mainNav">
+  <div class="nav__overlay"></div>
+  <div class="nav__inner">
+    
     <!-- Brand -->
-    <a class="nav__brand" href="/">Landing Demo</a>
+    <a href="#hero" class="nav__brand scroll-link">
+      <i class="fas fa-paw"></i>
+      Educando desde el Vínculo
+    </a>
 
-    <!-- Burger toggle (mobile) -->
+    <!-- Menú principal -->
+    <ul class="nav__menu">
+      
+      <li>
+        <a href="#hero" 
+           class="scroll-link "
+           >
+          Inicio
+        </a>
+      </li>
+      
+      <li>
+        <a href="#presentacion" 
+           class="scroll-link "
+           >
+          Presentación
+        </a>
+      </li>
+      
+      <li>
+        <a href="#logros" 
+           class="scroll-link "
+           >
+          Qué lograrás
+        </a>
+      </li>
+      
+      <li>
+        <a href="#sobre-mi" 
+           class="scroll-link "
+           >
+          Sobre mí
+        </a>
+      </li>
+      
+      <li>
+        <a href="#incluye" 
+           class="scroll-link "
+           >
+          Incluye
+        </a>
+      </li>
+      
+      <li>
+        <a href="#testimonios" 
+           class="scroll-link "
+           >
+          Testimonios
+        </a>
+      </li>
+      
+      <li>
+        <a href="#faqs" 
+           class="scroll-link "
+           >
+          FAQs
+        </a>
+      </li>
+      
+      <li>
+        <a href="#comprar" 
+           class="scroll-link external-link"
+           target="_blank" rel="noopener noreferrer">
+          Comprar
+        </a>
+      </li>
+      
+    </ul>
+
+    <!-- Burger menu -->
     <button class="nav__toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
       <span></span>
     </button>
 
-    <!-- Menú -->
-    <ul class="nav__menu" id="navMenu">
-      
-        
-          <li>
-            <a 
-              href="#hero" 
-              
-            >
-              Inicio
-            </a>
-          </li>
-        
-          <li>
-            <a 
-              href="#benefits" 
-              
-            >
-              Beneficios
-            </a>
-          </li>
-        
-          <li>
-            <a 
-              href="#about" 
-              
-            >
-              Nosotros
-            </a>
-          </li>
-        
-          <li>
-            <a 
-              href="#contact" 
-              
-            >
-              Contacto
-            </a>
-          </li>
-        
-          <li>
-            <a 
-              href="https://wa.me/5491121652703" 
-              target="_blank" rel="noopener"
-            >
-              WhatsApp
-            </a>
-          </li>
-        
-      
-    </ul>
   </div>
 </nav>
-
   
 
   <main id="main" tabindex="-1">
@@ -123,888 +148,818 @@
     
     
      
-     <section class="hero" id="hero">
-  <!-- Videos -->
-  
-    <video class="hero-video hero-desktop" autoplay muted loop playsinline>
-      <source src="/assets/videos/heroDesktop.webm" type="video/webm">
-      <source src="/assets/videos/heroDesktop.mp4" type="video/mp4">
-    </video>
-    <video class="hero-video hero-mobile" autoplay muted loop playsinline>
-      <source src="/assets/videos/heroDeskMobile.webm" type="video/webm">
-      <source src="/assets/videos/heroDeskMobile.mp4" type="video/mp4">
-    </video>
-  
-
+     
+<section class="hero" id="hero">
   <div class="hero-overlay"></div>
-  <div class="hero-fallback"></div>
-  <canvas id="heroParticles" class="hero-particles"></canvas>
+  <div class="hero-fallback" style="background: linear-gradient(135deg, #f7f3e6 0%, #e8e1d1 100%);"></div>
 
   <div class="hero-content-wrapper">
-    <div class="hero-content">
-      <!-- Título principal -->
-      <h1 class="fade-left animate-on-scroll">
-        Vuelve al origen de tu esencia divina
-      </h1>
-
-      <!-- Subtítulo opcional -->
+    <div class="hero-grid">
       
-      <h2 class="fade-left delay-1 animate-on-scroll hero-subtitle">
-        Un camino hacia tu bienestar integral con tecnología escalar
+      <!-- Columna principal (70%) -->
+      <div class="hero-content">
+        <h1 class="fade-left animate-on-scroll">
+          Tu perro no necesita control, necesita comprensión.
+        </h1>
+
+        
+        <h2 class="fade-left delay-1 animate-on-scroll hero-subtitle">
+          Aprendé a educar y acompañar desde el vínculo, con una mirada Sistémica, Emocional y Cognitiva.
+        </h2>
+        
+
+        <p class="fade-left delay-2 animate-on-scroll">
+          Un curso para tutores y profesionales que buscan una relación basada en respeto, empatía y comunicación real.
+        </p>
+
+        
+        <div class="hero-ctas">
+          
+          <a href="https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T"
+             class="btn-primary fade-left delay-3 scroll-link animate-on-scroll"
+              target="_blank" rel="noopener noreferrer">
+            🌱 Accedé al curso ahora
+          </a>
+          
+        </div>
+        
+      </div>
+
+      <!-- Columna PDF (30%) -->
+      
+      <div class="hero-pdf-column fade-right animate-on-scroll">
+        <div class="hero-pdf-regalo">
+          <div class="pdf-badge">
+            <span class="pdf-line1">🎁 Recibí gratis:</span>
+            <span class="pdf-line2">&#39;5 Claves para Comprender el Lenguaje de tu Perro&#39;</span>
+          </div>
+          <form class="pdf-form" data-netlify="true" name="pdf-regalo-hero">
+            <input type="email" name="email" placeholder="Tu email aquí..." required>
+            <button type="submit">Enviarme el PDF</button>
+            <p class="pdf-privacy">🔒 Respetamos tu privacidad. Sin spam.</p>
+          </form>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+    
+
+  
+    
+    
+    
+     
+     
+<section class="presentacion" id="presentacion">
+  <div class="container">
+    <div class="presentacion-content">
+      
+      <!-- Título -->
+      <h2 class="section-title fade-up animate-on-scroll">
+        Una nueva forma de educar, desde el amor y la comprensión.
       </h2>
+
+      <!-- Texto principal -->
+      <div class="presentacion-text">
+        
+        <p class="fade-up delay-1 animate-on-scroll">
+          Este curso te invita a repensar el vínculo humano-perro desde la mirada Sistémica–Emocional–Cognitiva.
+        </p>
+        
+        <p class="fade-up delay-2 animate-on-scroll">
+          Porque educar no es imponer, sino acompañar el desarrollo emocional y cognitivo del perro en un entorno seguro, coherente y afectivo.
+        </p>
+        
+        <p class="fade-up delay-3 animate-on-scroll">
+          Vas a descubrir cómo las emociones, los pensamientos y las dinámicas del sistema familiar influyen en la conducta del perro, y cómo podés transformar el vínculo a través de una comunicación consciente.
+        </p>
+        
+      </div>
+
+      <!-- Módulos -->
+      <div class="modulos-grid">
+        <h3 class="modulos-title fade-up delay-4 animate-on-scroll">Lo que vas a aprender:</h3>
+        
+        <div class="modulos-list">
+          
+          <div class="modulo-item fade-up delay-5 animate-on-scroll">
+            <div class="modulo-icon">
+              <i class="fas fa-paw"></i>
+            </div>
+            <span class="modulo-text">Módulo 1: Comprendiendo la educación canina desde el vínculo.</span>
+          </div>
+          
+          <div class="modulo-item fade-up delay-6 animate-on-scroll">
+            <div class="modulo-icon">
+              <i class="fas fa-paw"></i>
+            </div>
+            <span class="modulo-text">Módulo 2: El sistema emocional-cognitivo en humanos y perros.</span>
+          </div>
+          
+          <div class="modulo-item fade-up delay-7 animate-on-scroll">
+            <div class="modulo-icon">
+              <i class="fas fa-paw"></i>
+            </div>
+            <span class="modulo-text">Módulo 3: Gestión emocional y coherencia energética.</span>
+          </div>
+          
+          <div class="modulo-item fade-up delay-8 animate-on-scroll">
+            <div class="modulo-icon">
+              <i class="fas fa-paw"></i>
+            </div>
+            <span class="modulo-text">Módulo 4: Comunicación y lenguaje canino.</span>
+          </div>
+          
+          <div class="modulo-item fade-up delay-9 animate-on-scroll">
+            <div class="modulo-icon">
+              <i class="fas fa-paw"></i>
+            </div>
+            <span class="modulo-text">Módulo 5: Límites, autonomía y convivencia saludable.</span>
+          </div>
+          
+          <div class="modulo-item fade-up delay-10 animate-on-scroll">
+            <div class="modulo-icon">
+              <i class="fas fa-paw"></i>
+            </div>
+            <span class="modulo-text">Módulo 6: Integración y evolución del vínculo.</span>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- Mini CTA -->
+      <div class="presentacion-cta fade-up delay-10 animate-on-scroll">
+        <p class="cta-text">✨ Cambiá la forma de educar, creando una relación más consciente y armónica con tu perro.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+
+  
+    
+    
+    
+     
+     
+<section class="logros" id="logros">
+  <div class="container">
+    <div class="logros-content">
+      
+      <!-- Título -->
+      <h2 class="section-title fade-up animate-on-scroll">
+        Después de este curso, vas a poder…
+      </h2>
+
+      <!-- Grid de logros -->
+      <div class="logros-grid">
+        
+        <div class="logro-item fade-up delay-1 animate-on-scroll">
+          <div class="logro-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <p class="logro-text">Comprender las emociones y necesidades de tu perro desde una mirada integral.</p>
+        </div>
+        
+        <div class="logro-item fade-up delay-2 animate-on-scroll">
+          <div class="logro-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <p class="logro-text">Identificar cómo tu propio estado emocional impacta en su conducta.</p>
+        </div>
+        
+        <div class="logro-item fade-up delay-3 animate-on-scroll">
+          <div class="logro-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <p class="logro-text">Establecer límites amorosos y coherentes que fomenten la autonomía.</p>
+        </div>
+        
+        <div class="logro-item fade-up delay-4 animate-on-scroll">
+          <div class="logro-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <p class="logro-text">Desarrollar una comunicación más empática y respetuosa.</p>
+        </div>
+        
+        <div class="logro-item fade-up delay-5 animate-on-scroll">
+          <div class="logro-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <p class="logro-text">Transformar comportamientos no deseados desde la comprensión, no el castigo.</p>
+        </div>
+        
+        <div class="logro-item fade-up delay-6 animate-on-scroll">
+          <div class="logro-icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <p class="logro-text">Crear una convivencia basada en equilibrio, confianza y conexión real.</p>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+
+  
+    
+    
+    
+     
+     
+<section class="sobre-creadora" id="sobre-mi">
+  <div class="container">
+    <div class="sobre-creadora-content">
+      
+      <div class="sobre-creadora-grid">
+        <!-- Columna de texto -->
+        <div class="sobre-creadora-text">
+          <h2 class="section-title fade-left animate-on-scroll">
+            Desde el vínculo, no desde el control.
+          </h2>
+          
+          <div class="sobre-creadora-paragraphs">
+            
+              
+              <p class="fade-left delay-1 animate-on-scroll">
+                Soy Rodrigo Gomez, educador canino y acompañante en procesos vinculares desde un enfoque Sistémico–Emocional–Cognitivo.
+              </p>
+              
+            
+              
+              <p class="fade-left delay-2 animate-on-scroll">
+                A lo largo de mi recorrido, comprendí que detrás de cada conducta hay una historia emocional, tanto en el perro como en la persona que lo acompaña.
+              </p>
+              
+            
+              
+              <p class="fade-left delay-3 animate-on-scroll">
+                Este curso nace para compartir una mirada más humana, respetuosa y coherente sobre la educación canina — donde el vínculo es el verdadero punto de partida..
+              </p>
+              
+            
+          </div>
+        </div>
+
+        <!-- Columna de imagen -->
+        <div class="sobre-creadora-image">
+          
+          <div class="image-container fade-right animate-on-scroll">
+            <img 
+              src="/assets/images/rodrigo-perro.jpg" 
+              alt="Rodrigo Gomez con su perro"
+              loading="lazy"
+            >
+            <div class="image-frame"></div>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+
+  
+    
+    
+    
+     
+     
+<section class="incluye" id="incluye">
+  <div class="container">
+    <div class="incluye-content">
+      
+      <!-- Título -->
+      <h2 class="section-title fade-up animate-on-scroll">
+        ¿Qué vas a encontrar en este recorrido?
+      </h2>
+
+      <!-- Grid de beneficios -->
+      <div class="incluye-grid">
+        
+        <div class="incluye-item fade-up delay-1 animate-on-scroll">
+          <div class="incluye-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <div class="incluye-text">
+            <h3 class="incluye-titulo">6 módulos completos</h3>
+            <p class="incluye-descripcion">Con teoría, reflexiones y prácticas aplicables para tu día a día.</p>
+          </div>
+        </div>
+        
+        <div class="incluye-item fade-up delay-2 animate-on-scroll">
+          <div class="incluye-icon">
+            <i class="fas fa-puzzle-piece"></i>
+          </div>
+          <div class="incluye-text">
+            <h3 class="incluye-titulo">Herramientas emocionales y cognitivas</h3>
+            <p class="incluye-descripcion">Para comprender conductas y transformar tu comunicación.</p>
+          </div>
+        </div>
+        
+        <div class="incluye-item fade-up delay-3 animate-on-scroll">
+          <div class="incluye-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="incluye-text">
+            <h3 class="incluye-titulo">Ejercicios prácticos</h3>
+            <p class="incluye-descripcion">Para mejorar la comunicación humano–perro de manera efectiva.</p>
+          </div>
+        </div>
+        
+        <div class="incluye-item fade-up delay-4 animate-on-scroll">
+          <div class="incluye-icon">
+            <i class="fas fa-file-pdf"></i>
+          </div>
+          <div class="incluye-text">
+            <h3 class="incluye-titulo">Material descargable</h3>
+            <p class="incluye-descripcion">PDFs con acceso ilimitado para revisar cuando necesites.</p>
+          </div>
+        </div>
+        
+        <div class="incluye-item fade-up delay-5 animate-on-scroll">
+          <div class="incluye-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <div class="incluye-text">
+            <h3 class="incluye-titulo">Enfoque respetuoso</h3>
+            <p class="incluye-descripcion">Métodos conscientes y sin técnicas invasivas o punitivas.</p>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- CTA -->
+      
+      <div class="incluye-cta fade-up delay-7 animate-on-scroll">
+        <a href="https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T" 
+           class="btn-primary btn-incluye"
+           target="_blank" 
+           rel="noopener noreferrer">
+          👉 Accedé al curso y empezá a construir una relación desde el vínculo.
+        </a>
+      </div>
       
 
-      <!-- Párrafo descriptivo -->
-      <p class="fade-left delay-2 animate-on-scroll">
-        Descubrí cómo la tecnología escalar puede ayudarte a mejorar tu bienestar físico, mental y emocional, potenciar tus terapias y transformar la salud de manera integral.
+    </div>
+  </div>
+</section>
+
+    
+
+  
+    
+    
+    
+     
+     
+<section class="pdf-regalo-section" id="pdf-regalo">
+  <div class="container">
+    <div class="pdf-regalo-content">
+      
+      <div class="pdf-regalo-grid">
+        <!-- Columna de texto -->
+        <div class="pdf-regalo-text">
+          <h2 class="section-title fade-left animate-on-scroll">
+            🎁 Recibí tu PDF gratis
+          </h2>
+          
+          <h3 class="pdf-subtitulo fade-left delay-1 animate-on-scroll">
+            5 Claves para Comprender el Lenguaje de tu Perro
+          </h3>
+          
+          <p class="pdf-descripcion fade-left delay-2 animate-on-scroll">
+            Un regalo para empezar a transformar tu relación hoy mismo. Ingresá tu email y te lo enviamos al instante.
+          </p>
+
+          <!-- Formulario -->
+          <form class="pdf-form-main fade-left delay-3 animate-on-scroll" 
+                data-netlify="true" 
+                name="pdf-regalo-seccion">
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Ingresá tu email..." required>
+              <button type="submit" class="btn-pdf">
+                <i class="fas fa-download"></i>
+                Quiero mi PDF gratis
+              </button>
+            </div>
+            <p class="pdf-privacy-main">
+              <i class="fas fa-lock"></i>
+              Respetamos tu privacidad. Sin spam, solo contenido de valor.
+            </p>
+          </form>
+        </div>
+
+        <!-- Columna de imagen -->
+        <div class="pdf-regalo-visual fade-right animate-on-scroll">
+          
+          <img src="/assets/images/pdf-preview.png" alt="Vista previa del PDF regalo" loading="lazy">
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+
+  
+    
+    
+    
+     
+     
+<section class="testimonios" id="testimonios">
+  <div class="container">
+    <div class="testimonios-content">
+      
+      <!-- Título -->
+      <h2 class="section-title fade-up animate-on-scroll">
+        Historias de transformación
+      </h2>
+
+      <!-- Slider de testimonios -->
+      <div class="testimonios-slider">
+        <div class="testimonios-track">
+          
+          <div class="testimonio-slide fade-up delay-1 animate-on-scroll">
+            <div class="testimonio-card">
+              
+              <!-- Imagen del testimonio -->
+              <div class="testimonio-image">
+                
+                <img 
+                  src="/assets/images/testimonios/mariana-lolo.jpg" 
+                  alt="Mariana y Lolo"
+                  loading="lazy"
+                >
+                
+              </div>
+
+              <!-- Contenido del testimonio -->
+              <div class="testimonio-content">
+                <div class="testimonio-text">
+                  <p>"Entendí que mi perro no me desobedecía, simplemente no me comprendía. Hoy nos comunicamos con calma y empatía."</p>
+                </div>
+                <div class="testimonio-author">
+                  <span class="testimonio-nombre">Mariana y Lolo</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="testimonio-slide fade-up delay-2 animate-on-scroll">
+            <div class="testimonio-card">
+              
+              <!-- Imagen del testimonio -->
+              <div class="testimonio-image">
+                
+                <img 
+                  src="/assets/images/testimonios/julian-nube.jpg" 
+                  alt="Julián y Nube"
+                  loading="lazy"
+                >
+                
+              </div>
+
+              <!-- Contenido del testimonio -->
+              <div class="testimonio-content">
+                <div class="testimonio-text">
+                  <p>"Aprendí a observar mis emociones antes de pretender cambiar su conducta. Nuestro vínculo cambió completamente."</p>
+                </div>
+                <div class="testimonio-author">
+                  <span class="testimonio-nombre">Julián y Nube</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="testimonio-slide fade-up delay-3 animate-on-scroll">
+            <div class="testimonio-card">
+              
+              <!-- Imagen del testimonio -->
+              <div class="testimonio-image">
+                
+                <img 
+                  src="/assets/images/rodrigo-perro.jpg" 
+                  alt="Rodrigo (Creador)"
+                  loading="lazy"
+                >
+                
+              </div>
+
+              <!-- Contenido del testimonio -->
+              <div class="testimonio-content">
+                <div class="testimonio-text">
+                  <p>"Después de años de educación tradicional, descubrí que el verdadero cambio viene desde la comprensión mutua. Este curso es el resultado de esa transformación personal."</p>
+                </div>
+                <div class="testimonio-author">
+                  <span class="testimonio-nombre">Rodrigo (Creador)</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Controles del slider -->
+        <div class="testimonios-controls">
+          <button class="testimonio-prev" aria-label="Testimonio anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="testimonio-next" aria-label="Testimonio siguiente">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="testimonios-indicators">
+          
+          <button class="testimonio-indicator active" 
+                  data-index="0"
+                  aria-label="Ir al testimonio 1">
+          </button>
+          
+          <button class="testimonio-indicator " 
+                  data-index="1"
+                  aria-label="Ir al testimonio 2">
+          </button>
+          
+          <button class="testimonio-indicator " 
+                  data-index="2"
+                  aria-label="Ir al testimonio 3">
+          </button>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+
+  
+    
+    
+    
+     
+     
+<section class="faqs" id="faqs">
+  <div class="container">
+    <div class="faqs-content">
+      
+      <!-- Título -->
+      <h2 class="section-title fade-up animate-on-scroll">
+        Preguntas antes de empezar
+      </h2>
+
+      <!-- Grid de FAQs -->
+      <div class="faqs-grid">
+        
+        <div class="faq-card fade-up delay-1 animate-on-scroll">
+          <div class="faq-question" data-faq-index="0">
+            <h3>¿Es solo para educadores?</h3>
+            <span class="toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>No, está diseñado tanto para tutores como para profesionales que quieran profundizar en el enfoque emocional–cognitivo.</p>
+          </div>
+        </div>
+        
+        <div class="faq-card fade-up delay-2 animate-on-scroll">
+          <div class="faq-question" data-faq-index="1">
+            <h3>¿Qué necesito para hacerlo?</h3>
+            <span class="toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Solo disposición y curiosidad por comprender mejor el vínculo con tu perro. No se requieren conocimientos previos.</p>
+          </div>
+        </div>
+        
+        <div class="faq-card fade-up delay-3 animate-on-scroll">
+          <div class="faq-question" data-faq-index="2">
+            <h3>¿Incluye prácticas?</h3>
+            <span class="toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, cada módulo incluye ejercicios observacionales y reflexivos para aplicar inmediatamente con tu perro.</p>
+          </div>
+        </div>
+        
+        <div class="faq-card fade-up delay-4 animate-on-scroll">
+          <div class="faq-question" data-faq-index="3">
+            <h3>¿Cuánto dura el curso?</h3>
+            <span class="toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Es autogestionado. Podés hacerlo a tu ritmo y revisarlo las veces que quieras. El contenido equivale a aproximadamente 8 horas de aprendizaje.</p>
+          </div>
+        </div>
+        
+        <div class="faq-card fade-up delay-5 animate-on-scroll">
+          <div class="faq-question" data-faq-index="4">
+            <h3>¿Tengo acceso permanente?</h3>
+            <span class="toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, una vez que adquirís el curso, tenés acceso de por vida a todas las actualizaciones y materiales.</p>
+          </div>
+        </div>
+        
+        <div class="faq-card fade-up delay-6 animate-on-scroll">
+          <div class="faq-question" data-faq-index="5">
+            <h3>¿Ofrecen certificado?</h3>
+            <span class="toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, al completar el curso recibís un certificado digital que acredita tu participación y aprendizaje.</p>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+
+  
+    
+    
+    
+     
+     
+<section class="cierre" id="comprar">
+  <div class="container">
+    <div class="cierre-content">
+      
+      <!-- Título -->
+      <h2 class="cierre-title fade-up animate-on-scroll">
+        Educar desde el vínculo es el verdadero acto de amor.
+      </h2>
+
+      <!-- Subtítulo -->
+      <p class="cierre-subtitle fade-up delay-1 animate-on-scroll">
+        Cuando entendés lo que tu perro siente y necesita, el aprendizaje fluye sin conflicto. No se trata de enseñar órdenes, sino de aprender a convivir desde la comprensión y la empatía.
       </p>
 
+      <!-- CTA -->
       
-      <div class="hero-ctas">
+      <div class="cierre-cta fade-up delay-2 animate-on-scroll">
+        <a href="https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T" 
+           class="btn-primary btn-cierre"
+           target="_blank" 
+           rel="noopener noreferrer">
+          🐾 Accedé al curso ahora
+        </a>
+      </div>
+      
 
-        
-        <a href="#what-is"
-           class="btn-primary fade-left delay-3 scroll-link animate-on-scroll"
-           >
-          Conocer más
+      <!-- Elemento decorativo -->
+      <div class="cierre-decoration fade-up delay-3 animate-on-scroll">
+        <i class="fas fa-paw"></i>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+
+  
+    
+    
+    
+     
+     
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      
+      <!-- Logo y descripción -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <i class="fas fa-paw"></i>
+          <span>Educando desde el Vínculo</span>
+        </div>
+        <p class="footer-description">
+          Transformando relaciones desde la comprensión mutua.
+        </p>
+      </div>
+
+      <!-- Links rápidos -->
+      <div class="footer-links">
+        <h4>Navegación</h4>
+        <ul>
+          
+          <li>
+            <a href="#hero" 
+               >
+              Inicio
+            </a>
+          </li>
+          
+          <li>
+            <a href="#presentacion" 
+               >
+              Presentación
+            </a>
+          </li>
+          
+          <li>
+            <a href="#logros" 
+               >
+              Qué lograrás
+            </a>
+          </li>
+          
+          <li>
+            <a href="#sobre-mi" 
+               >
+              Sobre mí
+            </a>
+          </li>
+          
+          <li>
+            <a href="#incluye" 
+               >
+              Incluye
+            </a>
+          </li>
+          
+          <li>
+            <a href="#testimonios" 
+               >
+              Testimonios
+            </a>
+          </li>
+          
+          <li>
+            <a href="#faqs" 
+               >
+              FAQs
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <a href="mailto:rodrigo@educandodesdeelvinculo.com" class="footer-email">
+          <i class="fas fa-envelope"></i>
+          rodrigo@educandodesdeelvinculo.com
         </a>
         
-        <a href="https://wa.me/5493435616629"
-           class="btn-primary fade-left delay-4 scroll-link animate-on-scroll"
-            target="_blank" rel="noopener noreferrer">
-          Hablar por WhatsApp
-        </a>
-        
-
-        <!-- Botón Holístico desplegable -->
-        <div class="btn-holistic-wrapper fade-left delay-5 animate-on-scroll">
-          <button class="btn-primary btn-holistic">
-            Soy centro holístico <span class="btn-holistic-icon">▼</span>
-          </button>
-          <div class="btn-holistic-content">
-            <h3>Información para Centros Holísticos</h3>
-            <p>Sumá la energía escalar a tu espacio y potencia la experiencia de tus consultantes. Capacitación, soporte y beneficios exclusivos.</p>
-            <a href="https://wa.me/5493435616629" target="_blank" class="btn-primary">
-              Solicitar más info
-            </a>
-          </div>
-        </div>
-
-      </div>
-      
-    </div>
-  </div>
-
-  <!-- Mandala decorativo -->
-  <div class="hero-mandala" aria-hidden="true">
-    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="mandala-svg">
-      <defs>
-        <linearGradient id="goldGrad" x1="0" x2="1">
-          <stop offset="0" stop-color="#f7f3e6"/>
-          <stop offset="1" stop-color="#d4af37"/>
-        </linearGradient>
-      </defs>
-      <g fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.14">
-        <circle cx="250" cy="250" r="120"/>
-        <circle cx="250" cy="250" r="170"/>
-        <circle cx="250" cy="250" r="220"/>
-        <g transform="translate(250,250)">
+        <!-- Redes sociales -->
+        <div class="footer-social">
           
-          <path d="M0,-120 C20,-80 20,-40 0,-0" transform="rotate(0)"/>
-          
-          <path d="M0,-120 C20,-80 20,-40 0,-0" transform="rotate(45)"/>
-          
-          <path d="M0,-120 C20,-80 20,-40 0,-0" transform="rotate(90)"/>
-          
-          <path d="M0,-120 C20,-80 20,-40 0,-0" transform="rotate(135)"/>
-          
-          <path d="M0,-120 C20,-80 20,-40 0,-0" transform="rotate(180)"/>
-          
-          <path d="M0,-120 C20,-80 20,-40 0,-0" transform="rotate(225)"/>
-          
-          <path d="M0,-120 C20,-80 20,-40 0,-0" transform="rotate(270)"/>
-          
-          <path d="M0,-120 C20,-80 20,-40 0,-0" transform="rotate(315)"/>
-          
-        </g>
-      </g>
-    </svg>
-  </div>
-</section>
-
-
-    
-
-  
-    
-    
-    
-     
-     <section id="pain" class="pain section">
-  <div class="container">
-    <div class="section-header">
-      <h2>¿Te sientes identificado con alguno de estos problemas?</h2>
-      <p>No estás solo. Muchos emprendedores y marketers pasan por esto antes de encontrar una solución definitiva.</p>
-    </div>
-
-    <div class="pain-points">
-      
-      <div class="pain-point">
-        <div class="pain-point-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="pain-point-content">
-          <h3>Inviertes tiempo y dinero en una landing page que no convierte</h3>
-          <p>Diseños poco atractivos, mensajes confusos y una estructura que no guía al usuario hacia la acción.</p>
-        </div>
-      </div>
-      
-      <div class="pain-point">
-        <div class="pain-point-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="pain-point-content">
-          <h3>Tu tasa de conversión es más baja de lo que esperabas</h3>
-          <p>El tráfico llega, pero se va sin dejar sus datos o comprar tu producto. Es como llenar un balde con un agujero.</p>
-        </div>
-      </div>
-      
-      <div class="pain-point">
-        <div class="pain-point-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="pain-point-content">
-          <h3>Dependes de un desarrollador para cada pequeño cambio</h3>
-          <p>Cada vez que quieres actualizar un texto, un precio o una imagen, tienes que pedir favores, pagar caro y esperar días.</p>
-        </div>
-      </div>
-      
-      <div class="pain-point">
-        <div class="pain-point-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="pain-point-content">
-          <h3>No tienes claridad sobre qué está funcionando y qué no</h3>
-          <p>Te falta data y pruebas A/B para optimizar tu página y mejorar tus resultados de forma consistente.</p>
-        </div>
-      </div>
-      
-    </div>
-
-    <div class="pain-cta">
-      <p><strong>Pero existe una forma más fácil de hacer las cosas.</strong></p>
-      <a href="#solution" class="btn">
-        Quiero conocer la solución
-      </a>
-    </div>
-  </div>
-</section>
-
-
-    
-
-  
-    
-    
-    
-     
-     <section id="equipos" class="section equipos">
-  <div class="container">
-    <h2>Equipos SER</h2>
-    <p>Descubrí nuestros dispositivos y accesorios</p>
-    </br>
-
-    <div class="equipos-grid">
-      
-      <div class="equipo-card">
-        <!-- Icono y nombre -->
-        <div class="equipo-header">
-          <img src="/assets/images/ser-amor.png" alt="SER AMOR" class="equipo-icon">
-          <h3>SER AMOR</h3>
-        </div>
-
-        <!-- Descripción y precio -->
-        
-        <p class="equipo-description">Dispositivo de 3 Spark Gap o acelerador de partículas. Diseño en madera con tapa transparente. Electrodos de tungsteno de 6mm.</p>
-        
-        
-        <p class="equipo-price">$2.000 USD</p>
-        
-
-        <!-- Accordion toggle -->
-        <button class="equipo-toggle">Ver detalles</button>
-
-        <!-- Contenido desplegable -->
-        <div class="equipo-content">
-          
-          <div class="equipo-details">
-            <h4>Detalles técnicos</h4>
-            
-            <div class="detalle-item">• Diseño: caja de madera con tapa transparente grabada, 24x44x15 cm, peso 4kg. Rejilla exterior cubre ventilación con geometría sagrada.</div>
-            
-            <div class="detalle-item">• Alimentación: 110-220v, fuente 12v/15A, 50-60Hz.</div>
-            
-            <div class="detalle-item">• Fuente de poder: ZVS + flyback sintonizado en resonancia, genera 30.000V.</div>
-            
-            <div class="detalle-item">• Consumo de energía: 0.18 kW.</div>
-            
-            <div class="detalle-item">• Banco de Capacitores: alta tensión 4,7 nf/6000v para filtrar energía.</div>
-            
-            <div class="detalle-item">• Spark Gap externo: triple, electrodos de tungsteno de 6mm.</div>
-            
-            <div class="detalle-item">• Sistema de control: botón metálico con LED.</div>
-            
-            <div class="detalle-item">• Temporizador: 999 seg. (16.65 min).</div>
-            
-            <div class="detalle-item">• Salida magnética: 1 conector canon izquierdo.</div>
-            
-            <div class="detalle-item">• Salida radiante: 2 conectores canon derecho.</div>
-            
-            <div class="detalle-item">• Ventilación: 1 ventilador 120mm con LED azul.</div>
-            
-            <div class="detalle-item">• Seguridad eléctrica: fusible interno + tecla de corte externa, conexión a tierra.</div>
-            
-            <div class="detalle-item">• Emisores de ruido: &lt;60dB.</div>
-            
-          </div>
-          
-
-          
-          <div class="equipo-accessories">
-            <h4>Accesorios incluidos</h4>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-oudin.png" alt="Bobina Oudin" class="accessory-icon">
-              
-              <span>Bobina Oudin</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-pancake.png" alt="Bobina Pancake Radiante" class="accessory-icon">
-              
-              <span>Bobina Pancake Radiante</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-magnetica.png" alt="Bobina Pancake Magnética" class="accessory-icon">
-              
-              <span>Bobina Pancake Magnética</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/manguitos.png" alt="Manguitos" class="accessory-icon">
-              
-              <span>Manguitos</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-corona.png" alt="Bobina Corona" class="accessory-icon">
-              
-              <span>Bobina Corona</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/kit-alta-frecuencia.png" alt="KIT Alta Frecuencia" class="accessory-icon">
-              
-              <span>KIT Alta Frecuencia</span>
-            </div>
-            
-          </div>
-          
-
-          <!-- CTA dentro del contenido -->
-          
-          <div class="equipo-buy">
-            <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20mi%20SER AMOR" target="_blank" class="btn-whatsapp">
-              Quiero mi SER AMOR
-            </a>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="equipo-card">
-        <!-- Icono y nombre -->
-        <div class="equipo-header">
-          <img src="/assets/images/ser-origen.png" alt="SER ORIGEN" class="equipo-icon">
-          <h3>SER ORIGEN</h3>
-        </div>
-
-        <!-- Descripción y precio -->
-        
-        <p class="equipo-description">Dispositivo de 3 Spark Gap. Diseño rígido portátil con electrodos de tungsteno de 5mm.</p>
-        
-        
-        <p class="equipo-price">$1.600 USD</p>
-        
-
-        <!-- Accordion toggle -->
-        <button class="equipo-toggle">Ver detalles</button>
-
-        <!-- Contenido desplegable -->
-        <div class="equipo-content">
-          
-          <div class="equipo-details">
-            <h4>Detalles técnicos</h4>
-            
-            <div class="detalle-item">• Diseño: caja rústica PVC, 25x47x20cm, peso 3kg.</div>
-            
-            <div class="detalle-item">• Alimentación: 110-220v, fuente 12v/15A, 50-60Hz.</div>
-            
-            <div class="detalle-item">• Fuente de poder: ZVS + flyback, genera 30.000V.</div>
-            
-            <div class="detalle-item">• Consumo de energía: 0.18 kW.</div>
-            
-            <div class="detalle-item">• Banco de Capacitores: 4,7 nf/6000v.</div>
-            
-            <div class="detalle-item">• Spark Gap externo: triple, electrodos de tungsteno de 5mm.</div>
-            
-            <div class="detalle-item">• Sistema de control: botón PVC con LED rojo.</div>
-            
-            <div class="detalle-item">• Temporizador: 999 seg. (16.65 min).</div>
-            
-            <div class="detalle-item">• Salidas: 2 magnéticas (izquierda) y 2 radiantes (derecha).</div>
-            
-            <div class="detalle-item">• Ventilación: 4 ventiladores 80mm LED azul.</div>
-            
-            <div class="detalle-item">• Seguridad eléctrica: fusible interno.</div>
-            
-            <div class="detalle-item">• Emisores de ruido: &lt;60dB.</div>
-            
-          </div>
-          
-
-          
-          <div class="equipo-accessories">
-            <h4>Accesorios incluidos</h4>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-oudin-mediana.png" alt="Bobina Oudin Mediana" class="accessory-icon">
-              
-              <span>Bobina Oudin Mediana</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-pancake.png" alt="Bobina Pancake Radiante" class="accessory-icon">
-              
-              <span>Bobina Pancake Radiante</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-magnetica.png" alt="Bobina Pancake Magnética" class="accessory-icon">
-              
-              <span>Bobina Pancake Magnética</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/manguitos.png" alt="Manguitos" class="accessory-icon">
-              
-              <span>Manguitos</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-corona.png" alt="Bobina Corona" class="accessory-icon">
-              
-              <span>Bobina Corona</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/kit-alta-frecuencia.png" alt="KIT Alta Frecuencia" class="accessory-icon">
-              
-              <span>KIT Alta Frecuencia</span>
-            </div>
-            
-          </div>
-          
-
-          <!-- CTA dentro del contenido -->
-          
-          <div class="equipo-buy">
-            <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20mi%20SER ORIGEN" target="_blank" class="btn-whatsapp">
-              Quiero mi SER ORIGEN
-            </a>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="equipo-card">
-        <!-- Icono y nombre -->
-        <div class="equipo-header">
-          <img src="/assets/images/ser-esencia.png" alt="SER ESENCIA" class="equipo-icon">
-          <h3>SER ESENCIA</h3>
-        </div>
-
-        <!-- Descripción y precio -->
-        
-        <p class="equipo-description">Dispositivo de 1 Spark Gap. Diseño portátil con electrodos de tungsteno de 4mm.</p>
-        
-        
-        <p class="equipo-price">$950 USD</p>
-        
-
-        <!-- Accordion toggle -->
-        <button class="equipo-toggle">Ver detalles</button>
-
-        <!-- Contenido desplegable -->
-        <div class="equipo-content">
-          
-          <div class="equipo-details">
-            <h4>Detalles técnicos</h4>
-            
-            <div class="detalle-item">• Diseño: caja rústica PVC, 25x47x20cm, peso 3kg.</div>
-            
-            <div class="detalle-item">• Alimentación: 110-220v, fuente 12v/15A, 50-60Hz.</div>
-            
-            <div class="detalle-item">• Fuente de poder: ZVS + flyback, genera 24.000V.</div>
-            
-            <div class="detalle-item">• Consumo de energía: 0.18 kW.</div>
-            
-            <div class="detalle-item">• Banco de Capacitores: 4,7 nf/2000v.</div>
-            
-            <div class="detalle-item">• Spark Gap externo: 1 descarga simple, electrodos cruzados 4mm.</div>
-            
-            <div class="detalle-item">• Sistema de control: botón PVC con LED rojo.</div>
-            
-            <div class="detalle-item">• Salidas: 1 magnética (izquierda) y 1 radiante (derecha).</div>
-            
-            <div class="detalle-item">• Ventilación: 4 ventiladores 80mm LED azul.</div>
-            
-            <div class="detalle-item">• Seguridad eléctrica: fusible interno.</div>
-            
-            <div class="detalle-item">• Emisores de ruido: &lt;60dB.</div>
-            
-          </div>
-          
-
-          
-          <div class="equipo-accessories">
-            <h4>Accesorios incluidos</h4>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-oudin-chica.png" alt="Bobina Oudin Chica" class="accessory-icon">
-              
-              <span>Bobina Oudin Chica</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-pancake.png" alt="Bobina Pancake Radiante" class="accessory-icon">
-              
-              <span>Bobina Pancake Radiante</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-magnetica.png" alt="Bobina Pancake Magnética" class="accessory-icon">
-              
-              <span>Bobina Pancake Magnética</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/manguitos.png" alt="Manguitos" class="accessory-icon">
-              
-              <span>Manguitos</span>
-            </div>
-            
-            <div class="accessory-item">
-              
-              <img src="/assets/images/accesorios/bobina-corona.png" alt="Bobina Corona" class="accessory-icon">
-              
-              <span>Bobina Corona</span>
-            </div>
-            
-          </div>
-          
-
-          <!-- CTA dentro del contenido -->
-          
-          <div class="equipo-buy">
-            <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20mi%20SER ESENCIA" target="_blank" class="btn-whatsapp">
-              Quiero mi SER ESENCIA
-            </a>
-          </div>
-          
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
-
-    
-
-  
-    
-    
-    
-     
-     <section id="benefits" class="section benefits">
-  <div class="benefits-bg"></div>
-  <div class="container">
-    <h2 class="section-title">Más que una landing, tu identidad digital</h2>
-    <div class="grid grid--3">
-      
-      
-        <div class="card benefit-card fade-up animate-on-scroll" style="--delay: 0s;">
-          <img src="/assets/images/svg1.png" alt="Diseño a medida" class="benefit-icon"/>
-          <h3>Diseño a medida</h3>
-          <p>Cada página nace de vos.</p>
-        </div>
-      
-        <div class="card benefit-card fade-left animate-on-scroll" style="--delay: 0.2s;">
-          <img src="/assets/images/svg2.png" alt="Optimización total" class="benefit-icon"/>
-          <h3>Optimización total</h3>
-          <p>Rápida, segura y visible en Google.</p>
-        </div>
-      
-        <div class="card benefit-card fade-up animate-on-scroll" style="--delay: 0.4s;">
-          <img src="/assets/images/svg3.png" alt="Conexión inmediata" class="benefit-icon"/>
-          <h3>Conexión inmediata</h3>
-          <p>Tu página habla por vos y enamora a tu audiencia.</p>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-
-    
-
-  
-    
-    
-    
-     
-     <section id="steps" class="section steps">
-  <div class="container">
-    <h2>Proceso claro y humano</h2>
-    <div class="steps-grid">
-      
-        <div class="step-card animate-on-scroll" style="--delay: 0s;">
-          <div class="step-number">1</div>
-          <h3>Escuchamos</h3>
-          <p>Entendemos tu público y tu propuesta.</p>
-          <span class="step-arrow"></span>
-        </div>
-      
-        <div class="step-card animate-on-scroll" style="--delay: 0.2s;">
-          <div class="step-number">2</div>
-          <h3>Diseñamos</h3>
-          <p>Tu mensaje y estilo pensado para ellos.</p>
-          <span class="step-arrow"></span>
-        </div>
-      
-        <div class="step-card animate-on-scroll" style="--delay: 0.4s;">
-          <div class="step-number">3</div>
-          <h3>Creamos</h3>
-          <p>Transformamos tu esencia en una experiencia digital única que habla por sí sola.</p>
-          <span class="step-arrow"></span>
-        </div>
-      
-        <div class="step-card animate-on-scroll" style="--delay: 0.6000000000000001s;">
-          <div class="step-number">4</div>
-          <h3>Entregamos</h3>
-          <p>Lista para usar, sin estrés ni complicaciones y te enseñamos a gestionarla fácilmente.</p>
-          <span class="step-arrow"></span>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-
-    
-
-  
-    
-    
-    
-     
-     <section class="section-divider about-divider invert">
-  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-    <defs>
-      <linearGradient id="dividerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#C0C0C0" stop-opacity="0.9"/>
-        <stop offset="40%" stop-color="#E5E4E2" stop-opacity="0.9"/>
-        <stop offset="70%" stop-color="#A9A9A9" stop-opacity="0.8"/>
-        <stop offset="100%" stop-color="#F5F5F5" stop-opacity="0.95"/>
-      </linearGradient>
-    </defs>
-    <path d="M0,50 C480,120 960,-20 1440,50 L1440,100 L0,100 Z" fill="url(#dividerGradient)"></path>
-  </svg>
-</section>
-
-
-    
-
-  
-    
-    
-    
-     
-     <section id="about" class="section about animate-on-scroll">
-  <div class="container about__grid">
-    
-    <div class="about__content">
-      <h2>Más que una landing: una herramienta de crecimiento</h2>
-      <p>Creamos sistemas vivos, diseñados para que tu negocio crezca con solidez y transparencia.  Nuestras landings están optimizadas desde la base: velocidad, seguridad y diseño responsivo en todos los dispositivos.
-</p>
-      
-        <p>Podés actualizar textos, imágenes o secciones en minutos, sin conocimientos técnicos.  Además, tenés acceso a estadísticas reales sobre cómo la gente encuentra tu negocio en la web.  Y lo mejor: cada landing está pensada para ser escalable, para que tu presencia digital crezca al mismo ritmo que vos.
-</p>
-      
-    </div>
-
-    <div class="about__slideshow">
-      <div class="slideshow">
-        
-          <div class="slide active">
-            <img src="/assets/images/about/cms.webp" alt="Imagen sobre la marca">
-          </div>
-        
-          <div class="slide">
-            <img src="/assets/images/about/googlesearch.webp" alt="Imagen sobre la marca">
-          </div>
-        
-          <div class="slide">
-            <img src="/assets/images/about/mockup.webp" alt="Imagen sobre la marca">
-          </div>
-        
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-    
-
-  
-    
-    
-    
-     
-     <section id="faqs" class="section faqs animate-on-scroll">
-  <canvas id="faqsParticles" class="faqs-particles"></canvas>
-  <div class="container">
-    <h2 class="section-title">Preguntas frecuentes</h2>
-    <div class="faqs-grid">
-      
-      <div class="faq-card">
-        <div class="faq-question">
-          <h3>¿Puedo editar mi landing yo mismo?</h3>
-          <span class="toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Sí. Con nuestro CMS podés actualizar textos, imágenes y secciones sin conocimientos técnicos.</p>
-        </div>
-      </div>
-      
-      <div class="faq-card">
-        <div class="faq-question">
-          <h3>¿Cuánto tarda la entrega?</h3>
-          <span class="toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>En promedio entre 3 y 5 días hábiles, con SEO básico incluido. Si necesitás urgencia, podemos agilizar el proceso.</p>
-        </div>
-      </div>
-      
-      <div class="faq-card">
-        <div class="faq-question">
-          <h3>¿Se ve bien en celular?</h3>
-          <span class="toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Sí, todas las landings son 100% responsivas, adaptadas a cualquier dispositivo.</p>
-        </div>
-      </div>
-      
-      <div class="faq-card">
-        <div class="faq-question">
-          <h3>¿La optimización SEO está incluida?</h3>
-          <span class="toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Sí, entregamos tu página lista para indexarse en Google y con métricas conectadas a Search Console.</p>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
-
-    
-
-  
-    
-    
-    
-     
-     <section class="cta-video" id="cta-video">
-  <video class="cta-video-bg" autoplay muted loop playsinline>
-    <source src="/assets/videos/hero.mp4" type="video/mp4">
-    <source src="/assets/videos/hero.webm" type="video/webm">
-  </video>
-
-  <!-- Overlay degradado sutil -->
-  <div class="cta-overlay"></div>
-
-  <div class="cta-content container text-center animate-on-scroll fade-up">
-    <h2>Mostrá tu negocio como tus clientes lo esperan</h2>
-    <p>Tu página ya está lista para atraer y enamorar visitantes.</p>
-
-    
-      <div class="cta-buttons">
-        
-           <a href="https://wa.me/5491121652703" class="btn-primary" target="_blank" rel="noopener noreferrer">Quiero mi página</a>
-        
-      </div>
-    
-  </div>
-</section>
-
-
-    
-
-  
-    
-    
-    
-     
-     <section id="contact" class="section contact animate-on-scroll">
-  <canvas id="contactParticles" class="contact-particles"></canvas>
-
-  <div class="container contact__grid">
-    <div class="contact__info">
-      <h2>Pedí tu landing hoy</h2>
-      <p>Completá el formulario y te contactamos para empezar cuanto antes.</p>
-      <ul class="contact__details">
-        <li><strong>Email:</strong> <span>traduccioncreativadigital@gmail.com</span></li>
-        <li><strong>Teléfono:</strong> +54 11 2165-2703</li>
-      </ul>
-    </div>
-
-    <div class="contact__form">
-  <form 
-    name="contact" 
-    method="POST" 
-    data-netlify="true" 
-    netlify-honeypot="bot-field"
-  >
-    <!-- honeypot oculto -->
-    <input type="hidden" name="form-name" value="contact">
-    <p style="display:none;">
-      <label>No completar: <input name="bot-field"></label>
-    </p>
-
-    <div class="form-group">
-      <label for="name">Nombre</label>
-      <input type="text" id="name" name="name" required>
-    </div>
-
-    <div class="form-group">
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-
-    <div class="form-group">
-      <label for="message">Mensaje</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-    </div>
-
-    <button type="submit" class="btn">Enviar</button>
-  </form>
-
-  <!-- Mensaje de confirmación -->
-  <div id="form-success" class="form-success" style="display:none;">
-    ✅ ¡Gracias por tu mensaje! Te responderemos a la brevedad.
-  </div>
-</div>
-
-  </div>
-</section>
-
-
-    
-
-  
-    
-    
-    
-     
-     <footer id="footer" class="footer">
-  <canvas id="footerParticles" class="footer-particles"></canvas>
-
-  <div class="container footer__grid">
-    
-    <div class="footer__copy">
-      <p>© 2025 Landing Demo. Todos los derechos reservados.</p>
-      <span class="footer__email">traduccioncreativadigital@gmail.com</span>
-    </div>
-
-    <ul class="footer__menu">
-      
-        <li><a href="#hero">Inicio</a></li>
-      
-        <li><a href="#benefits">Beneficios</a></li>
-      
-        <li><a href="#about">Nosotros</a></li>
-      
-        <li><a href="#contact">Contacto</a></li>
-      
-    </ul>
-
-    <div class="footer__social">
-      
-        
-          <a href="https://instagram.com/demo" target="_blank" rel="noopener" class="btn-social instagram">
+          <a href="https://instagram.com/tu_usuario" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="social-link instagram"
+             aria-label="instagram">
             <i class="fab fa-instagram"></i>
           </a>
-        
-        
-      
-        
-        
-          <a href="https://wa.me/5491121652703" target="_blank" rel="noopener" class="btn-social whatsapp">
+          
+          <a href="https://wa.me/5491123456789" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="social-link whatsapp"
+             aria-label="whatsapp">
             <i class="fab fa-whatsapp"></i>
           </a>
-        
-      
+          
+        </div>
+      </div>
+
     </div>
 
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>© 2024 Educando desde el Vínculo. Todos los derechos reservados.</p>
+    </div>
   </div>
 </footer>
-
 
     
 

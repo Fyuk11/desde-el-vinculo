@@ -1,0 +1,50 @@
+{# sections/sobre-creadora.njk #}
+<section class="sobre-creadora" id="sobre-mi">
+  <div class="container">
+    <div class="sobre-creadora-content">
+      
+      <div class="sobre-creadora-grid">
+        <!-- Columna de texto -->
+        <div class="sobre-creadora-text">
+          <h2 class="section-title fade-left animate-on-scroll">
+            {{ section_data.title }}
+          </h2>
+          
+          <div class="sobre-creadora-paragraphs">
+            {% for paragraph in section_data.texto.split('. ') %}
+              {% if paragraph %}
+              <p class="fade-left delay-{{ loop.index }} animate-on-scroll">
+                {{ paragraph }}.
+              </p>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Columna de imagen -->
+        <div class="sobre-creadora-image">
+          {% if section_data.imagen %}
+          <div class="image-container fade-right animate-on-scroll">
+            <img 
+              src="{{ section_data.imagen }}" 
+              alt="{{ section_data.alt or 'Rodrigo Gomez - Educador canino' }}"
+              loading="lazy"
+            >
+            <div class="image-frame"></div>
+          </div>
+          {% else %}
+          <!-- Placeholder si no hay imagen -->
+          <div class="image-placeholder fade-right animate-on-scroll">
+            <div class="placeholder-content">
+              <i class="fas fa-user fa-3x"></i>
+              <p>Rodrigo Gomez</p>
+              <small>Educador canino</small>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

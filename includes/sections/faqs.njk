@@ -1,19 +1,28 @@
-<section id="faqs" class="section faqs animate-on-scroll">
-  <canvas id="faqsParticles" class="faqs-particles"></canvas>
+{# sections/faqs.njk - Actualizado para el ebook #}
+<section class="faqs" id="faqs">
   <div class="container">
-    <h2 class="section-title">{{ section_data.title }}</h2>
-    <div class="faqs-grid">
-      {% for item in section_data.items %}
-      <div class="faq-card">
-        <div class="faq-question">
-          <h3>{{ item.question }}</h3>
-          <span class="toggle">+</span>
+    <div class="faqs-content">
+      
+      <!-- Título -->
+      <h2 class="section-title fade-up animate-on-scroll">
+        {{ section_data.title }}
+      </h2>
+
+      <!-- Grid de FAQs -->
+      <div class="faqs-grid">
+        {% for item in section_data.items %}
+        <div class="faq-card fade-up delay-{{ loop.index }} animate-on-scroll">
+          <div class="faq-question" data-faq-index="{{ loop.index0 }}">
+            <h3>{{ item.question }}</h3>
+            <span class="toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>{{ item.answer }}</p>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>{{ item.answer }}</p>
-        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
+
     </div>
   </div>
 </section>

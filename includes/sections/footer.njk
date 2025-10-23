@@ -1,33 +1,61 @@
-<footer id="footer" class="footer">
-  <canvas id="footerParticles" class="footer-particles"></canvas>
+{# sections/footer.njk - Versión compacta #}
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      
+      <!-- Logo y descripción -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <i class="fas fa-paw"></i>
+          <span>Educando desde el Vínculo</span>
+        </div>
+        <p class="footer-description">
+          Transformando relaciones desde la comprensión mutua.
+        </p>
+      </div>
 
-  <div class="container footer__grid">
-    
-    <div class="footer__copy">
-      <p>{{ section_data.text or "© 2025 Mi Marca Premium. Todos los derechos reservados." }}</p>
-      <span class="footer__email">{{ section.email or "contacto@midominio.com" }}</span>
+      <!-- Links rápidos -->
+      <div class="footer-links">
+        <h4>Navegación</h4>
+        <ul>
+          {% for link in section_data.links %}
+          <li>
+            <a href="{{ link.url }}" 
+               {% if "http" in link.url %}target="_blank" rel="noopener noreferrer"{% endif %}>
+              {{ link.text }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <a href="mailto:{{ section_data.email }}" class="footer-email">
+          <i class="fas fa-envelope"></i>
+          {{ section_data.email }}
+        </a>
+        
+        <!-- Redes sociales -->
+        <div class="footer-social">
+          {% for social in section_data.social %}
+          <a href="{{ social.url }}" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="social-link {{ social.type }}"
+             aria-label="{{ social.type }}">
+            <i class="fab fa-{{ social.type }}"></i>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
     </div>
 
-    <ul class="footer__menu">
-      {% for link in section_data.links %}
-        <li><a href="{{ link.url }}">{{ link.text }}</a></li>
-      {% endfor %}
-    </ul>
-
-    <div class="footer__social">
-      {% for s in section_data.social %}
-        {% if s.type == "instagram" %}
-          <a href="{{ s.url }}" target="_blank" rel="noopener" class="btn-social instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-        {% endif %}
-        {% if s.type == "whatsapp" %}
-          <a href="{{ s.url }}" target="_blank" rel="noopener" class="btn-social whatsapp">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        {% endif %}
-      {% endfor %}
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>{{ section_data.texto }}</p>
     </div>
-
   </div>
 </footer>

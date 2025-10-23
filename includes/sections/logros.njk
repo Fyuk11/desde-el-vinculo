@@ -1,0 +1,25 @@
+{# sections/logros.njk #}
+<section class="logros" id="logros">
+  <div class="container">
+    <div class="logros-content">
+      
+      <!-- Título -->
+      <h2 class="section-title fade-up animate-on-scroll">
+        {{ section_data.title }}
+      </h2>
+
+      <!-- Grid de logros -->
+      <div class="logros-grid">
+        {% for item in section_data.items %}
+        <div class="logro-item fade-up delay-{{ loop.index }} animate-on-scroll">
+          <div class="logro-icon">
+            <i class="{{ item.icon }}"></i>
+          </div>
+          <p class="logro-text">{{ item.texto }}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>

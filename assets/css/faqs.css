@@ -1,101 +1,114 @@
 /* =======================
-   FAQs Section Premium
+   FAQs Section - Layout 2x2
 ======================= */
+
 .faqs {
   position: relative;
-  padding: 100px 20px;
-  background: #111827;
-  color: #fff;
-  overflow: visible; /* para partículas */
+  padding: 80px 20px;
+  background: #f8f9fa;
+  color: #2c3e50;
+  overflow: visible;
 }
 
-/* Canvas de partículas */
-.faqs-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
+.faqs-content {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Título de sección */
 .faqs .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 60px;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
   text-align: center;
-  color: #0A84FF;
-  text-shadow: 0 2px 8px rgba(10,132,255,0.3);
+  color: #2c3e50;
+  font-weight: 700;
 }
 
-/* Grid de tarjetas */
+/* Grid de tarjetas - Layout 2x2 */
 .faqs-grid {
-  position: relative;
-  z-index: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
 }
 
-/* Tarjeta FAQ con halo sutil */
+/* Tarjeta FAQ - Más rectangular */
 .faq-card {
   position: relative;
-  background: rgba(255,255,255,0.05);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  backdrop-filter: blur(10px);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: white;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
   overflow: hidden;
-}
-
-/* Halo difuso */
-.faq-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(10,132,255,0.2), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: 0;
-}
-
-.faq-card:hover::before {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* Contenido de la tarjeta encima del halo */
-.faq-card > * {
-  position: relative;
-  z-index: 1;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .faq-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 14px 28px rgba(10,132,255,0.3);
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.12);
+  border-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.faq-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #27ae60;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.faq-card.active::before {
+  opacity: 1;
+}
+
+.faq-card.active {
+  background: #f8fff9;
+  border-color: #27ae60;
 }
 
 /* Pregunta */
 .faq-question {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   cursor: pointer;
+  gap: 1rem;
 }
 
 .faq-question h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 0;
+  color: #2c3e50;
+  font-weight: 600;
+  line-height: 1.4;
+  flex: 1;
 }
 
 .faq-question .toggle {
-  font-size: 1.5rem;
-  transition: transform 0.3s;
+  font-size: 1.4rem;
+  color: #27ae60;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+}
+
+.faq-card.active .faq-question .toggle {
+  transform: rotate(45deg);
+  color: #229954;
 }
 
 /* Respuesta */
@@ -103,62 +116,101 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .faq-card.active .faq-answer {
-  max-height: 500px;
+  max-height: 200px;
+  margin-top: 1rem;
 }
 
-.faq-card.active .faq-question .toggle {
-  transform: rotate(45deg);
+.faq-answer p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #5d6d7e;
+  margin: 0;
+  padding-right: 1rem;
 }
 
 /* =======================
-   Responsive
+   RESPONSIVE FAQS 2x2
 ======================= */
 
-/* Mobile muy pequeño */
+/* Tablets - 2 columnas */
+@media (min-width: 768px) {
+  .faqs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .faq-card {
+    min-height: 140px;
+    padding: 2rem;
+  }
+  
+  .faqs .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .faqs-grid {
+    gap: 2rem;
+  }
+  
+  .faq-card {
+    padding: 2.2rem;
+    min-height: 150px;
+  }
+  
+  .faqs .section-title {
+    font-size: 2.8rem;
+  }
+  
+  .faq-question h3 {
+    font-size: 1.15rem;
+  }
+}
+
+/* Mobile pequeño */
 @media (max-width: 480px) {
-  .faqs { padding: 60px 15px; }
-  .faqs .section-title { font-size: 1.6rem; margin-bottom: 40px; }
-  .faq-card { padding: 1.5rem; }
-  .faq-question h3 { font-size: 1rem; }
-  .faq-question .toggle { font-size: 1.2rem; }
+  .faqs {
+    padding: 60px 20px;
+  }
+  
+  .faqs .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .faq-card {
+    padding: 1.5rem;
+    min-height: 110px;
+  }
+  
+  .faq-question h3 {
+    font-size: 1rem;
+  }
 }
 
-/* Tablets / Mobile grande */
-@media (min-width: 481px) and (max-width: 768px) {
-  .faqs { padding: 80px 20px; }
-  .faqs .section-title { font-size: 2rem; margin-bottom: 50px; }
-  .faq-card { padding: 1.8rem; }
-  .faq-question h3 { font-size: 1.1rem; }
-  .faq-question .toggle { font-size: 1.4rem; }
+/* =======================
+   ANIMACIONES (compartidas)
+======================= */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
 }
 
-/* Desktop / Monitores estándar */
-@media (min-width: 769px) and (max-width: 1199px) {
-  .faqs { padding: 100px 40px; }
-  .faqs .section-title { font-size: 2.2rem; margin-bottom: 55px; }
-  .faq-card { padding: 2rem; }
-  .faq-question h3 { font-size: 1.2rem; }
-  .faq-question .toggle { font-size: 1.5rem; }
+.fade-up.animate-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Desktop grande */
-@media (min-width: 1200px) and (max-width: 1919px) {
-  .faqs { padding: 120px 60px; }
-  .faqs .section-title { font-size: 2.5rem; margin-bottom: 60px; }
-  .faq-card { padding: 2.2rem; }
-  .faq-question h3 { font-size: 1.25rem; }
-  .faq-question .toggle { font-size: 1.6rem; }
-}
-
-/* Ultra wide */
-@media (min-width: 1920px) {
-  .faqs { padding: 140px 80px; }
-  .faqs .section-title { font-size: 3rem; margin-bottom: 70px; }
-  .faq-card { padding: 2.5rem; }
-  .faq-question h3 { font-size: 1.4rem; }
-  .faq-question .toggle { font-size: 1.8rem; }
-}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }

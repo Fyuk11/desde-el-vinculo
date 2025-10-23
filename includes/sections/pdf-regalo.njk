@@ -1,0 +1,54 @@
+{# sections/pdf-regalo.njk #}
+<section class="pdf-regalo-section" id="pdf-regalo">
+  <div class="container">
+    <div class="pdf-regalo-content">
+      
+      <div class="pdf-regalo-grid">
+        <!-- Columna de texto -->
+        <div class="pdf-regalo-text">
+          <h2 class="section-title fade-left animate-on-scroll">
+            {{ section_data.titulo }}
+          </h2>
+          
+          <h3 class="pdf-subtitulo fade-left delay-1 animate-on-scroll">
+            {{ section_data.subtitulo }}
+          </h3>
+          
+          <p class="pdf-descripcion fade-left delay-2 animate-on-scroll">
+            {{ section_data.descripcion }}
+          </p>
+
+          <!-- Formulario -->
+          <form class="pdf-form-main fade-left delay-3 animate-on-scroll" 
+                data-netlify="true" 
+                name="{{ section_data.form_id }}">
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Ingresá tu email..." required>
+              <button type="submit" class="btn-pdf">
+                <i class="fas fa-download"></i>
+                Quiero mi PDF gratis
+              </button>
+            </div>
+            <p class="pdf-privacy-main">
+              <i class="fas fa-lock"></i>
+              Respetamos tu privacidad. Sin spam, solo contenido de valor.
+            </p>
+          </form>
+        </div>
+
+        <!-- Columna de imagen -->
+        <div class="pdf-regalo-visual fade-right animate-on-scroll">
+          {% if section_data.imagen %}
+          <img src="{{ section_data.imagen }}" alt="Vista previa del PDF regalo" loading="lazy">
+          {% else %}
+          <div class="pdf-placeholder">
+            <i class="fas fa-file-pdf"></i>
+            <span>PDF Gratuito</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

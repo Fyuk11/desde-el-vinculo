@@ -1,34 +1,29 @@
+// main.js - Versión limpia para el ebook
 import { initNav } from './nav.js';
-import { initScrollAnimations, initAboutAnimations, initContactParticles } from './animations.js';
-import { initSlideshow } from "./slideshow.js";
+import { initTestimonios } from './testimonios.js';
+import { initScrollAnimations } from './animations.js';
 import { initFaqs } from './faqs.js';
-import { initContactForm } from "./form.js";
-import { initHeroDropdown } from "./hero.js";
-import { initEquipos } from './equipos.js';
+import { initPdfForms } from './pdf-forms.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Navegación y componentes principales
   initNav();
-  initScrollAnimations();
-  initSlideshow();
-  initAboutAnimations();   // <-- 💡 acá la llamamos
+  initTestimonios();
   initFaqs();
-  initContactParticles();
-  initContactForm();
-  initHeroDropdown();
-  initEquipos();
-
-  console.log("Landing loaded ✅");
+  initPdfForms();
+  
+  // Animaciones
+  initScrollAnimations();
+  
+  console.log("🎯 Landing Educando desde el Vínculo loaded ✅");
 });
 
-// main.js
-// main.js
-// Asegura que siempre al recargar se vaya al inicio
+// Scroll al inicio al recargar
 window.addEventListener("beforeunload", () => {
   window.scrollTo(0, 0);
 });
 
-// También por si se carga normalmente
 window.addEventListener('load', () => {
   setTimeout(() => {
     window.scrollTo(0, 0);

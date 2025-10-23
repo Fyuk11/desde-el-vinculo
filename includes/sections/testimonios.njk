@@ -1,0 +1,71 @@
+{# sections/testimonios.njk #}
+<section class="testimonios" id="testimonios">
+  <div class="container">
+    <div class="testimonios-content">
+      
+      <!-- Título -->
+      <h2 class="section-title fade-up animate-on-scroll">
+        {{ section_data.title }}
+      </h2>
+
+      <!-- Slider de testimonios -->
+      <div class="testimonios-slider">
+        <div class="testimonios-track">
+          {% for testimonio in section_data.items %}
+          <div class="testimonio-slide fade-up delay-{{ loop.index }} animate-on-scroll">
+            <div class="testimonio-card">
+              
+              <!-- Imagen del testimonio -->
+              <div class="testimonio-image">
+                {% if testimonio.imagen %}
+                <img 
+                  src="{{ testimonio.imagen }}" 
+                  alt="{{ testimonio.nombre }}"
+                  loading="lazy"
+                >
+                {% else %}
+                <div class="testimonio-placeholder">
+                  <i class="fas fa-user"></i>
+                </div>
+                {% endif %}
+              </div>
+
+              <!-- Contenido del testimonio -->
+              <div class="testimonio-content">
+                <div class="testimonio-text">
+                  <p>"{{ testimonio.texto }}"</p>
+                </div>
+                <div class="testimonio-author">
+                  <span class="testimonio-nombre">{{ testimonio.nombre }}</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Controles del slider -->
+        <div class="testimonios-controls">
+          <button class="testimonio-prev" aria-label="Testimonio anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="testimonio-next" aria-label="Testimonio siguiente">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="testimonios-indicators">
+          {% for testimonio in section_data.items %}
+          <button class="testimonio-indicator {% if loop.first %}active{% endif %}" 
+                  data-index="{{ loop.index0 }}"
+                  aria-label="Ir al testimonio {{ loop.index }}">
+          </button>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

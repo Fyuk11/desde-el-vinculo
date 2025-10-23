@@ -1,0 +1,40 @@
+{# sections/incluye.njk #}
+<section class="incluye" id="incluye">
+  <div class="container">
+    <div class="incluye-content">
+      
+      <!-- Título -->
+      <h2 class="section-title fade-up animate-on-scroll">
+        {{ section_data.title }}
+      </h2>
+
+      <!-- Grid de beneficios -->
+      <div class="incluye-grid">
+        {% for item in section_data.items %}
+        <div class="incluye-item fade-up delay-{{ loop.index }} animate-on-scroll">
+          <div class="incluye-icon">
+            <i class="{{ item.icon }}"></i>
+          </div>
+          <div class="incluye-text">
+            <h3 class="incluye-titulo">{{ item.titulo }}</h3>
+            <p class="incluye-descripcion">{{ item.texto }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- CTA -->
+      {% if section_data.cta %}
+      <div class="incluye-cta fade-up delay-7 animate-on-scroll">
+        <a href="{{ section_data.cta.url }}" 
+           class="btn-primary btn-incluye"
+           target="_blank" 
+           rel="noopener noreferrer">
+          {{ section_data.cta.texto }}
+        </a>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>

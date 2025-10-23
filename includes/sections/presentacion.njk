@@ -1,0 +1,43 @@
+{# sections/presentacion.njk #}
+<section class="presentacion" id="presentacion">
+  <div class="container">
+    <div class="presentacion-content">
+      
+      <!-- Título -->
+      <h2 class="section-title fade-up animate-on-scroll">
+        {{ section_data.title }}
+      </h2>
+
+      <!-- Texto principal -->
+      <div class="presentacion-text">
+        {% for texto in section_data.textos %}
+        <p class="fade-up delay-{{ loop.index }} animate-on-scroll">
+          {{ texto }}
+        </p>
+        {% endfor %}
+      </div>
+
+      <!-- Módulos -->
+      <div class="modulos-grid">
+        <h3 class="modulos-title fade-up delay-4 animate-on-scroll">Lo que vas a aprender:</h3>
+        
+        <div class="modulos-list">
+          {% for modulo in section_data.modulos %}
+          <div class="modulo-item fade-up delay-{{ loop.index + 4 }} animate-on-scroll">
+            <div class="modulo-icon">
+              <i class="fas fa-paw"></i>
+            </div>
+            <span class="modulo-text">{{ modulo }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Mini CTA -->
+      <div class="presentacion-cta fade-up delay-10 animate-on-scroll">
+        <p class="cta-text">{{ section_data.cta_text }}</p>
+      </div>
+
+    </div>
+  </div>
+</section>

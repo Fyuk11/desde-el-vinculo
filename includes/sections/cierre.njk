@@ -1,0 +1,35 @@
+{# sections/cierre.njk #}
+<section class="cierre" id="comprar">
+  <div class="container">
+    <div class="cierre-content">
+      
+      <!-- Título -->
+      <h2 class="cierre-title fade-up animate-on-scroll">
+        {{ section_data.title }}
+      </h2>
+
+      <!-- Subtítulo -->
+      <p class="cierre-subtitle fade-up delay-1 animate-on-scroll">
+        {{ section_data.subtitle }}
+      </p>
+
+      <!-- CTA -->
+      {% if section_data.cta %}
+      <div class="cierre-cta fade-up delay-2 animate-on-scroll">
+        <a href="{{ section_data.cta.url }}" 
+           class="btn-primary btn-cierre"
+           target="_blank" 
+           rel="noopener noreferrer">
+          {{ section_data.cta.texto }}
+        </a>
+      </div>
+      {% endif %}
+
+      <!-- Elemento decorativo -->
+      <div class="cierre-decoration fade-up delay-3 animate-on-scroll">
+        <i class="fas fa-paw"></i>
+      </div>
+
+    </div>
+  </div>
+</section>

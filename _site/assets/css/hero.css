@@ -1,268 +1,294 @@
 /* =======================
-   HERO GENERAL
-   ======================= */
+   HERO - Layout mejorado
+======================= */
+
 .hero {
   position: relative;
-  min-height: 100vh; /* ocupa toda la pantalla */
-  height: auto;      /* crece con el contenido */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible; /* mostrar contenido extra */
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
+  padding: 80px 20px 40px;
+  background: linear-gradient(135deg, #f7f3e6 0%, #e8e1d1 100%);
+  overflow: hidden;
 }
 
-/* =======================
-   FONDO
-   ======================= */
-.hero-video,
-.hero-overlay,
-.hero-fallback,
-.hero-particles {
+.hero-overlay {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 1;
 }
 
-.hero-video { z-index: -4; }
-.hero-overlay { 
-  z-index: -3;
-  background: linear-gradient(135deg, rgba(10,20,30,0.75), rgba(255,215,0,0.15));
-  animation: gradientShift 20s ease infinite;
-}
-.hero-fallback { 
-  z-index: -5;
-  background: url('/assets/images/placeholder.jpg') center/cover no-repeat; 
-}
-.hero-particles { z-index: -2; }
-
-/* =======================
-   CONTENIDO
-   ======================= */
 .hero-content-wrapper {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
-  text-align: center;
-  padding: 0 20px;
-  transition: all 0.3s ease;
+  max-width: 1200px;
 }
 
+/* Grid principal - Contenido más ancho, PDF más compacto */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Columna izquierda - MÁS ANCHA y con más presencia */
 .hero-content {
-  max-width: 800px;
-  margin: auto;
+  text-align: center;
+  color: #2c3e50;
 }
 
-.hero h1 { font-size: 1.8rem; margin-bottom: 15px; line-height: 1.3; }
-.hero p { font-size: 1rem; margin-bottom: 25px; line-height: 1.6; }
+.hero-content h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: #2c3e50;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-/* =======================
-   BOTONES / CTA
-   ======================= */
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  color: #5d6d7e;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: #566573;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hero-ctas {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1rem;
   align-items: center;
 }
 
-/* Botón principal */
 .btn-primary {
-  display: inline-block;
-  padding: 12px 30px;
-  background: linear-gradient(135deg, #0D1B2A, #FFD700);
-  color: #fff;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-.btn-primary:hover { transform: scale(1.05); }
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -75%;
-  width: 50%; height: 100%;
-  background: rgba(255,255,255,0.3);
-  transform: skewX(-20deg);
-  transition: all 0.5s ease;
-}
-.btn-primary:hover::after { left: 150%; }
-
-/* =======================
-   BOTÓN HOLÍSTICO (FAQ) FINAL UNIFICADO
-   ======================= */
-/* =======================
-   BOTÓN HOLÍSTICO (FAQ) FINAL
-   ======================= */
-
-/* =======================
-   BOTÓN HOLÍSTICO (FAQ) FINAL
-   ======================= */
-/* =======================
-   BOTÓN HOLÍSTICO (FAQ) FINAL UNIFICADO
-   ======================= */
-.btn-holistic-wrapper {
-  width: 100%;
-  max-width: 300px;
-  text-align: left;
-  overflow: visible; /* permite que el contenido no se corte */
-  margin-top: 15px;
-  transition: all 0.3s ease;
-}
-
-.btn-holistic {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  padding: 12px 30px; /* igual que btn-primary */
-  border-radius: 50px;
-  background: linear-gradient(135deg, #0D1B2A, #FFD700);
-  color: #fff;
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-holistic-icon {
-  transition: transform 0.3s ease;
-}
-
-/* Contenido desplegable */
-.btn-holistic-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease, margin 0.4s ease;
-  padding: 0;
-  margin: 0;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-}
-
-/* Contenido expandido */
-.btn-holistic-wrapper.expanded .btn-holistic-content {
-  max-height: 500px;
-  padding: 15px;  /* coincide con startland */
-  margin-top: 10px;
-}
-
-/* Rotación de la flecha al expandir */
-.btn-holistic-wrapper.expanded .btn-holistic-icon {
-  transform: rotate(45deg);
-}
-
-/* Títulos y párrafos dentro - REGLAS ESPECÍFICAS */
-.hero .btn-holistic-content p {
-  font-size: 0.9rem;      /* tamaño igual que startland */
-  line-height: 1.4;
-  margin: 6px 0;
-}
-
-.hero .btn-holistic-content p.holistic-title {
-  font-weight: 600;
-  font-size: 1rem;        /* igual que startland */
-  margin-bottom: 8px;
-}
-
-/* Desktop: alineación horizontal con otros botones */
-@media(min-width:768px){
-  .hero-ctas { 
-    flex-direction: row; 
-    justify-content: center; 
-    gap: 15px; 
-    align-items: flex-start;
-  }
-  .btn-holistic-wrapper { margin-left: 0; }
-}
-
-
-
-/* =======================
-   MANDALA DECORATIVO
-   ======================= */
-.hero-mandala {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  min-width: 280px;
 }
 
-.mandala-svg {
-  width: min(85vw, 800px);
-  height: auto;
-  opacity: 0.15;
-  transform-origin: center center;
-  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.12));
-  animation: mandalaRotate 120s linear infinite;
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+  background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
 }
 
-@media (max-width: 768px) {
-  .mandala-svg { width: min(95vw, 700px); opacity: 0.08; }
+/* Columna derecha - PDF más compacto y al costado */
+.hero-pdf-column {
+  display: flex;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .mandala-svg { animation: none; }
+.hero-pdf-regalo {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  border: 3px solid #27ae60;
+  box-shadow: 0 15px 35px rgba(39, 174, 96, 0.15);
+  backdrop-filter: blur(10px);
+  max-width: 350px;
+  width: 100%;
 }
 
-@keyframes mandalaRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.pdf-badge {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.pdf-line1 {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e67e22;
+  margin-bottom: 0.3rem;
+}
+
+.pdf-line2 {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1.3;
+}
+
+.pdf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pdf-form input {
+  padding: 14px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.pdf-form input:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+.pdf-form button {
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pdf-form button:hover {
+  background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+}
+
+.pdf-privacy {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* =======================
    RESPONSIVE
-   ======================= */
-.hero-desktop { display: none; }
-.hero-mobile { display: block; }
+======================= */
 
-@media (min-width: 768px) {
-  .hero-desktop { display: block; }
-  .hero-mobile { display: none; }
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 20px 40px;
+    min-height: auto;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .hero-pdf-regalo {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+}
 
-  .hero h1 { font-size: 2.6rem; }
-  .hero p { font-size: 1.2rem; }
-
-  .hero-ctas { 
-    flex-direction: row; 
-    justify-content: center; 
-    gap: 15px; 
+/* Desktop - Layout de dos columnas */
+@media (min-width: 769px) {
+  .hero-grid {
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: left;
+  }
+  
+  .hero-subtitle,
+  .hero-content p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .hero-ctas {
     align-items: flex-start;
   }
-
-  .btn-holistic-wrapper { margin-left: 0; }
 }
 
-@media (min-width: 1024px) {
-  .hero h1 { font-size: 3.2rem; }
-  .hero p { font-size: 1.4rem; }
+/* Desktop grande */
+@media (min-width: 1200px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 3fr 1fr;
+    gap: 5rem;
+  }
+  
+  .hero-pdf-regalo {
+    max-width: 320px;
+  }
 }
 
-@media (min-width: 1440px) {
-  .hero h1 { font-size: 3.8rem; }
-  .hero p { font-size: 1.6rem; }
-  .btn-primary { padding: 14px 34px; font-size: 1.1rem; }
+/* Animaciones */
+.fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease;
 }
 
-@media (max-width: 480px) {
-  .hero h1 { font-size: 1.5rem; }
-  .hero p { font-size: 0.9rem; }
+.fade-left.animate-on-scroll {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-/* =======================
-   ANIMACIÓN GRADIENTE
-   ======================= */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.fade-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s ease;
 }
+
+.fade-right.animate-on-scroll {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
