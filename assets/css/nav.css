@@ -170,6 +170,101 @@
   background: #27ae60;
 }
 
+
+
+/* =======================
+   NAV LOGO STYLES
+======================= */
+
+.nav__logo {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.nav__icon {
+  font-size: 1.4rem;
+  color: #27ae60;
+  transition: all 0.3s ease;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.nav__brand-text {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #27ae60;
+  transition: all 0.3s ease;
+}
+
+.nav--venta .nav__brand:hover .nav__logo {
+  transform: scale(1.1);
+}
+
+.nav--venta .nav__brand:hover .nav__icon {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.nav--venta .nav__brand:hover .nav__brand-text {
+  color: #229954;
+}
+
+/* Logo para nav transparente (en hero) */
+.hero ~ .nav--venta .nav__logo {
+  filter: brightness(0) invert(1);
+}
+
+.hero ~ .nav--venta .nav__icon {
+  color: white;
+}
+
+.hero ~ .nav--venta .nav__brand-text {
+  color: white;
+}
+
+.hero ~ .nav--venta.scrolled .nav__logo {
+  filter: none;
+}
+
+.hero ~ .nav--venta.scrolled .nav__icon {
+  color: #27ae60;
+}
+
+.hero ~ .nav--venta.scrolled .nav__brand-text {
+  color: #27ae60;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav__logo {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .nav__brand-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__brand-text {
+    display: none; /* Ocultar texto en móvil muy pequeño */
+  }
+  
+  .nav__logo {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+
+
+
 /* =======================
    MENÚ MÓVIL - Diseño cálido
 ======================= */

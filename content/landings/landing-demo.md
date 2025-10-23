@@ -3,13 +3,37 @@ layout: landing.njk
 title: "Educando desde el Vínculo - Curso de Educación Canina Consciente"
 description: "Aprendé a educar y acompañar desde el vínculo, con una mirada Sistémica, Emocional y Cognitiva. Transformá tu relación con tu perro."
 permalink: index.html
+
+# =======================
+# CONFIGURACIÓN SITIO
+# =======================
+site:
+  name: "Educando desde el Vínculo"
+  url: "https://desdeelvinculo.netlify.app"
+  verification: "tu-codigo-google-search-console" # Opcional
+
+# =======================
+# LOGO Y FAVICON
+# =======================
+logo: "/assets/images/logo.svg"  # o .png
+favicon: "/assets/images/logo.svg"
+
+# =======================
+# SEO OPTIMIZADO
+# =======================
 seo:
-  canonical: https://tudominio.com
+  canonical: "https://desdeelvinculo.netlify.app"
+  robots: "index, follow"
+  # Open Graph
   og_title: "Educando desde el Vínculo - Curso de Educación Canina Consciente"
-  og_description: "Aprendé a educar y acompañar desde el vínculo, con una mirada Sistémica, Emocional y Cognitiva."
-  og_image: /assets/images/og-educando-vinculo.jpg
+  og_description: "Aprendé a educar desde el vínculo emocional. Curso online para tutores y profesionales que buscan una relación basada en respeto y empatía."
+  og_image: "/assets/images/og-image.jpg"
+  og_url: "https://desdeelvinculo.netlify.app"
+  # Twitter
   twitter_title: "Educando desde el Vínculo - Curso Consciente"
-  twitter_description: "Transformá tu relación con tu perro desde la comprensión y el respeto."
+  twitter_description: "Transformá tu relación con tu perro desde la comprensión mutua. Educación canina sin castigos, con amor y respeto."
+  twitter_image: "/assets/images/twitter-image.jpg"
+  twitter_site: "@educandovinculo"
 nav:
   - text: Inicio
     url: "#hero"

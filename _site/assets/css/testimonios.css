@@ -1,11 +1,11 @@
 /* =======================
-   TESTIMONIOS SECTION
-   First Mobile + Responsive
+   TESTIMONIOS SECTION 
+   Coherente con el diseño del sitio
 ======================= */
 
 .testimonios {
-  padding: 60px 20px;
-  background: #ffffff;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fef9f3 0%, #fdf6ec 100%);
   position: relative;
 }
 
@@ -14,9 +14,9 @@
   margin: 0 auto;
 }
 
-/* Título de sección */
+/* Título de sección - Coherente */
 .testimonios .section-title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   text-align: center;
   margin-bottom: 3rem;
   color: #2c3e50;
@@ -24,10 +24,11 @@
   font-weight: 700;
 }
 
-/* Slider container */
+/* Slider container mejorado */
 .testimonios-slider {
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .testimonios-track {
@@ -37,125 +38,159 @@
 
 .testimonio-slide {
   flex: 0 0 100%;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
-/* Tarjeta de testimonio */
+/* Tarjeta de testimonio - Más cálida */
 .testimonio-card {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
   border-radius: 20px;
-  padding: 2.5rem 2rem;
+  padding: 3rem 2.5rem;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e9ecef;
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(230, 126, 34, 0.08);
+  border: 1px solid #f8e9d9;
+  transition: all 0.4s ease;
   max-width: 600px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonio-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
 }
 
 .testimonio-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(39, 174, 96, 0.15);
-  border-color: #27ae60;
+  box-shadow: 0 15px 40px rgba(230, 126, 34, 0.15);
+  border-color: #f1c27d;
 }
 
-/* Imagen del testimonio */
+.testimonio-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Imagen del testimonio - Mejorada */
 .testimonio-image {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.8rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid #27ae60;
-  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+  border: 3px solid #e67e22;
+  box-shadow: 0 8px 20px rgba(230, 126, 34, 0.25);
+  transition: all 0.3s ease;
+}
+
+.testimonio-card:hover .testimonio-image {
+  transform: scale(1.05);
+  border-color: #d35400;
 }
 
 .testimonio-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.testimonio-card:hover .testimonio-image img {
+  transform: scale(1.1);
 }
 
 .testimonio-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
-/* Contenido del testimonio */
+/* Contenido del testimonio - Más cálido */
 .testimonio-text p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   color: #2c3e50;
   font-style: italic;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.8rem 0;
   quotes: "“" "”" "‘" "’";
+  position: relative;
 }
 
 .testimonio-text p::before {
   content: open-quote;
-  font-size: 2rem;
-  color: #27ae60;
+  font-size: 3rem;
+  color: #e67e22;
   line-height: 0;
-  vertical-align: -0.3em;
-  margin-right: 0.2rem;
+  vertical-align: -0.4em;
+  margin-right: 0.3rem;
+  opacity: 0.7;
 }
 
 .testimonio-text p::after {
   content: close-quote;
-  font-size: 2rem;
-  color: #27ae60;
+  font-size: 3rem;
+  color: #e67e22;
   line-height: 0;
-  vertical-align: -0.3em;
-  margin-left: 0.2rem;
+  vertical-align: -0.4em;
+  margin-left: 0.3rem;
+  opacity: 0.7;
 }
 
 .testimonio-author {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .testimonio-nombre {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #27ae60;
+  color: #e67e22;
   display: block;
 }
 
-/* Controles del slider */
+/* Controles del slider - Coherentes */
 .testimonios-controls {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
 }
 
 .testimonio-prev,
 .testimonio-next {
   width: 50px;
   height: 50px;
-  border: 2px solid #27ae60;
+  border: 2px solid #e67e22;
   background: white;
   border-radius: 50%;
-  color: #27ae60;
+  color: #e67e22;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.2);
 }
 
 .testimonio-prev:hover,
 .testimonio-next:hover {
-  background: #27ae60;
+  background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
   color: white;
-  transform: scale(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 126, 34, 0.3);
 }
 
 .testimonio-prev:disabled,
@@ -168,15 +203,16 @@
 .testimonio-prev:disabled:hover,
 .testimonio-next:disabled:hover {
   background: white;
-  color: #27ae60;
+  color: #e67e22;
+  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.2);
 }
 
-/* Indicadores */
+/* Indicadores - Mejorados */
 .testimonios-indicators {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
+  gap: 0.8rem;
+  margin-top: 2rem;
 }
 
 .testimonio-indicator {
@@ -184,144 +220,91 @@
   height: 12px;
   border-radius: 50%;
   border: none;
-  background: #bdc3c7;
+  background: #f1c27d;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .testimonio-indicator.active {
-  background: #27ae60;
-  transform: scale(1.2);
+  background: #e67e22;
+  transform: scale(1.3);
+  box-shadow: 0 2px 8px rgba(230, 126, 34, 0.4);
 }
 
 .testimonio-indicator:hover {
-  background: #27ae60;
-  transform: scale(1.1);
+  background: #e67e22;
+  transform: scale(1.2);
 }
 
 /* =======================
-   RESPONSIVE
+   RESPONSIVE MEJORADO
 ======================= */
 
-/* Mobile muy pequeño (hasta 360px) */
-@media (max-width: 360px) {
+/* Mobile */
+@media (max-width: 768px) {
   .testimonios {
-    padding: 50px 15px;
+    padding: 60px 20px;
   }
   
   .testimonios .section-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 2.5rem;
   }
   
   .testimonio-card {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 2rem;
   }
   
   .testimonio-image {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 1.2rem;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
   }
   
   .testimonio-text p {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+  
+  .testimonio-text p::before,
+  .testimonio-text p::after {
+    font-size: 2.5rem;
   }
   
   .testimonio-nombre {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   
   .testimonio-prev,
   .testimonio-next {
     width: 45px;
     height: 45px;
-    font-size: 1.1rem;
   }
 }
 
-/* Mobile estándar (361px - 480px) */
-@media (min-width: 361px) and (max-width: 480px) {
-  .testimonios {
-    padding: 60px 20px;
-  }
-  
-  .testimonios .section-title {
-    font-size: 1.6rem;
-  }
-}
-
-/* Tablets / Mobile grande (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .testimonios {
-    padding: 80px 30px;
-  }
-  
-  .testimonios .section-title {
-    font-size: 2rem;
-    margin-bottom: 3.5rem;
-  }
-  
-  .testimonio-card {
-    padding: 3rem 2.5rem;
-    max-width: 500px;
-  }
-  
-  .testimonio-image {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 2rem;
-  }
-  
-  .testimonio-text p {
-    font-size: 1.1rem;
-  }
-  
-  .testimonio-nombre {
-    font-size: 1.2rem;
-  }
-}
-
-/* Desktop / Monitores estándar (769px - 1199px) */
+/* Tablets */
 @media (min-width: 769px) and (max-width: 1199px) {
-  .testimonios {
-    padding: 100px 40px;
-  }
-  
   .testimonios .section-title {
-    font-size: 2.2rem;
-    margin-bottom: 4rem;
+    font-size: 2.5rem;
   }
   
   .testimonio-card {
     padding: 3.5rem 3rem;
-    max-width: 550px;
   }
   
   .testimonio-image {
     width: 100px;
     height: 100px;
   }
-  
-  .testimonio-text p {
-    font-size: 1.15rem;
-  }
 }
 
-/* Desktop grande (1200px - 1919px) */
-@media (min-width: 1200px) and (max-width: 1919px) {
-  .testimonios {
-    padding: 120px 60px;
-  }
-  
+/* Desktop */
+@media (min-width: 1200px) {
   .testimonios .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 4.5rem;
+    font-size: 2.8rem;
   }
   
   .testimonio-card {
     padding: 4rem 3.5rem;
-    max-width: 600px;
   }
   
   .testimonio-image {
@@ -335,56 +318,29 @@
   }
 }
 
-/* Ultra wide (1920px+) */
-@media (min-width: 1920px) {
+/* Mobile pequeño */
+@media (max-width: 480px) {
   .testimonios {
-    padding: 140px 80px;
-  }
-  
-  .testimonios-content {
-    max-width: 1200px;
-  }
-  
-  .testimonios .section-title {
-    font-size: 3rem;
-    margin-bottom: 5rem;
+    padding: 50px 15px;
   }
   
   .testimonio-card {
-    padding: 4.5rem 4rem;
-    max-width: 700px;
+    padding: 2rem 1.5rem;
   }
   
   .testimonio-image {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 2.5rem;
+    width: 70px;
+    height: 70px;
   }
   
-  .testimonio-text p {
-    font-size: 1.3rem;
-    line-height: 1.8;
-  }
-  
-  .testimonio-nombre {
-    font-size: 1.3rem;
-  }
-  
-  .testimonio-prev,
-  .testimonio-next {
-    width: 60px;
-    height: 60px;
-    font-size: 1.4rem;
-  }
-  
-  .testimonio-indicator {
-    width: 15px;
-    height: 15px;
+  .testimonio-text p::before,
+  .testimonio-text p::after {
+    font-size: 2rem;
   }
 }
 
 /* =======================
-   ANIMACIONES
+   ANIMACIONES COHERENTES
 ======================= */
 
 .fade-up {
@@ -401,3 +357,19 @@
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
+
+/* Efecto de entrada suave para slides */
+.testimonio-slide {
+  animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

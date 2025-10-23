@@ -42,8 +42,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- Favicon -->
-  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+  {# En base.njk - línea 38 #}
+<!-- Favicon -->
+<link rel="icon" href="{{ landing.favicon or '/assets/images/favicon.ico' }}" type="image/x-icon">
 </head>
 <body>
   {% if not nav_override %}
