@@ -189,8 +189,8 @@ sections:
   
     # 🟩 FOOTER
   - type: footer
-    email: "rodrigo@educandodesdeelvinculo.com"
-    texto: "© 2024 Educando desde el Vínculo. Todos los derechos reservados."
+    email: "desdeel.vinculo@gmail.com"
+    texto: "© 2025 Educando desde el Vínculo. Todos los derechos reservados."
     links:
       - text: "Inicio"
         url: "#hero"
@@ -208,9 +208,9 @@ sections:
         url: "#faqs"
     social:
       - type: "instagram"
-        url: "https://instagram.com/tu_usuario"
+        url: "https://www.instagram.com/desdeel.vinculo/"
       - type: "whatsapp"
-        url: "https://wa.me/5491123456789"
+        url: "https://wa.me/5491121652703"
   
   
   
