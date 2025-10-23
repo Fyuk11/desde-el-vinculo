@@ -1,4 +1,4 @@
-// nav.js - Versión actualizada
+// nav.js - Versión mejorada con fixes de viewport
 export function initNav() {
   const nav = document.querySelector('.nav--venta');
   const navToggle = document.querySelector('.nav__toggle');
@@ -7,6 +7,13 @@ export function initNav() {
   const scrollLinks = document.querySelectorAll('.scroll-link');
 
   if (!nav) return;
+
+  // Prevenir zoom no deseado en dispositivos táctiles
+  function preventZoom(event) {
+    if (event.touches.length > 1) {
+      event.preventDefault();
+    }
+  }
 
   // Scroll effect
   function handleScroll() {
@@ -19,10 +26,26 @@ export function initNav() {
 
   // Toggle mobile menu
   function toggleMenu() {
+    const isOpening = !navMenu.classList.contains('active');
+    
     navToggle.classList.toggle('open');
     navMenu.classList.toggle('active');
     navOverlay.classList.toggle('active');
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    
+    if (isOpening) {
+      document.body.style.overflow = 'hidden';
+      // Prevenir scroll del body cuando el menú está abierto
+      document.addEventListener('touchmove', preventScroll, { passive: false });
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('touchmove', preventScroll);
+    }
+  }
+
+  function preventScroll(e) {
+    if (navMenu.classList.contains('active')) {
+      e.preventDefault();
+    }
   }
 
   // Close menu on link click
@@ -31,6 +54,7 @@ export function initNav() {
     navMenu.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    document.removeEventListener('touchmove', preventScroll);
   }
 
   // Smooth scroll for anchor links
@@ -42,14 +66,27 @@ export function initNav() {
       const target = document.querySelector(href);
       
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
         closeMenu();
       }
     }
   }
 
+  // Cerrar menú al redimensionar (si se abre en móvil y se cambia a desktop)
+  function handleResize() {
+    if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  }
+
   // Event listeners
   window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('touchstart', preventZoom, { passive: false });
+  
   navToggle.addEventListener('click', toggleMenu);
   navOverlay.addEventListener('click', closeMenu);
 
@@ -60,5 +97,5 @@ export function initNav() {
   // Initial state
   handleScroll();
 
-  console.log('✅ Navegación inicializada');
+  console.log('✅ Navegación inicializada con fixes de viewport');
 }

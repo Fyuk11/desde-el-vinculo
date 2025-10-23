@@ -1,5 +1,5 @@
 /* =======================
-   NAV - Versión corregida con media queries optimizadas
+   NAV - Versión corregida - Menú visible en desktop
 ======================= */
 
 .nav--venta {
@@ -91,7 +91,7 @@
 }
 
 /* =======================
-   MENÚ PRINCIPAL
+   MENÚ PRINCIPAL - SIEMPRE VISIBLE EN DESKTOP
 ======================= */
 
 .nav--venta .nav__menu {
@@ -157,35 +157,48 @@
 }
 
 /* =======================
-   BURGER TOGGLE
+   BURGER TOGGLE - SOLO VISIBLE EN MÓVIL
 ======================= */
 
 .nav--venta .nav__toggle {
-  display: none;
+  display: none; /* Oculta por defecto - solo visible en móvil */
   background: none;
   border: none;
   cursor: pointer;
-  width: 30px;
-  height: 24px;
+  width: 44px;
+  height: 44px;
   position: relative;
   z-index: 1250;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav--venta .nav__toggle:hover {
+  background: rgba(39, 174, 96, 0.1);
 }
 
 .nav--venta .nav__toggle span {
   display: block;
-  width: 100%;
+  width: 24px;
   height: 3px;
   background: #2c3e50;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
 }
 
-/* Estado abierto */
+/* Estado abierto - Animación mejorada */
+.nav--venta .nav__toggle.open {
+  background: rgba(39, 174, 96, 0.15);
+}
+
 .nav--venta .nav__toggle.open span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
+  transform: translateY(9px) rotate(45deg);
   background: #27ae60;
 }
 
@@ -195,7 +208,7 @@
 }
 
 .nav--venta .nav__toggle.open span:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg);
   background: #27ae60;
 }
 
@@ -248,7 +261,7 @@
 }
 
 /* =======================
-   MEDIA QUERIES OPTIMIZADAS
+   MEDIA QUERIES CORREGIDAS
    Mobile First Approach
 ======================= */
 
@@ -276,13 +289,13 @@
     font-size: 1rem;
   }
   
-  /* Ocultar menú desktop, mostrar burger */
+  /* OCULTAR menú desktop, MOSTRAR burger en móvil */
   .nav--venta .nav__menu {
-    display: none;
+    display: none; /* Oculta menú desktop en móvil */
   }
   
   .nav--venta .nav__toggle {
-    display: flex;
+    display: flex; /* Muestra burger en móvil */
   }
 }
 
@@ -306,6 +319,7 @@
     font-size: 1.1rem;
   }
   
+  /* OCULTAR menú desktop, MOSTRAR burger en tablet pequeña */
   .nav--venta .nav__menu {
     display: none;
   }
@@ -326,7 +340,7 @@
     right: -100%;
     width: 280px;
     height: 100vh;
-    height: 100dvh; /* Para navegadores modernos */
+    height: 100dvh;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     flex-direction: column;
     justify-content: flex-start;
@@ -399,7 +413,7 @@
 }
 
 /* =======================
-   TABLETS (769px - 1024px)
+   TABLETS (769px - 1024px) - MENÚ DESKTOP VISIBLE
 ======================= */
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -409,6 +423,7 @@
   }
   
   .nav--venta .nav__menu {
+    display: flex; /* Asegura que el menú sea visible */
     gap: 1.2rem;
   }
   
@@ -424,10 +439,14 @@
   .nav__brand-short {
     display: none;
   }
+  
+  .nav--venta .nav__toggle {
+    display: none; /* Oculta burger en tablets */
+  }
 }
 
 /* =======================
-   DESKTOP (1025px +)
+   DESKTOP (1025px +) - MENÚ DESKTOP SIEMPRE VISIBLE
 ======================= */
 
 @media (min-width: 1025px) {
@@ -444,49 +463,41 @@
   .nav__brand-short {
     display: none;
   }
-}
-
-/* =======================
-   PREVENIR ZOOM EN MOBILE
-   Y MEJORAR EXPERIENCIA TÁCTIL
-======================= */
-
-@media (max-width: 768px) {
-  .nav--venta .nav__menu li a {
-    font-size: 1.1rem;
-    padding: 1.2rem 0; /* Área táctil más grande */
-  }
   
   .nav--venta .nav__toggle {
-    padding: 0.5rem; /* Área táctil más grande */
+    display: none; /* Oculta burger en desktop */
   }
   
-  /* Prevenir zoom en inputs */
-  input, select, textarea {
-    font-size: 16px !important;
+  /* Asegurar que el menú desktop sea visible */
+  .nav--venta .nav__menu {
+    display: flex !important;
   }
 }
 
 /* =======================
-   MEJORAS DE ACCESIBILIDAD
+   FIXES CRÍTICOS DE VIEWPORT
 ======================= */
 
-@media (prefers-reduced-motion: reduce) {
-  .nav--venta,
-  .nav--venta .nav__menu,
-  .nav--venta .nav__toggle span {
-    transition: none;
-  }
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
 }
 
-/* Alto contraste para mejor accesibilidad */
-@media (prefers-contrast: high) {
-  .nav--venta {
-    background: white;
-    border-bottom: 2px solid #27ae60;
-  }
-  
-  .nav--venta .nav__menu li a {
-    color: #000;
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix específico para iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .nav--venta .nav__menu {
+    height: -webkit-fill-available;
+    height: fill-available;
   }
 }

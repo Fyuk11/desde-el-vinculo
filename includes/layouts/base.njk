@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{# En el <head> de base.njk - REEMPLAZAR la línea del viewport #}
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
   <title>{{ landing.title or site.name or "Landing Demo" }}</title>
   <meta name="description" content="{{ landing.description or site.description or "" }}">
