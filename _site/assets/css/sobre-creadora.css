@@ -4,26 +4,33 @@
 ======================= */
 
 .sobre-creadora {
-  padding: 60px 20px;
+  padding: 30px 30px;
   background: #ffffff;
   position: relative;
+  /* Prevenir scroll definitivamente */
+  overflow: hidden;
 }
 
 .sobre-creadora-content {
-  max-width: 1200px;
+  max-width: 1800px;
   margin: 0 auto;
+  /* Asegurar que no cause scroll */
+  overflow: hidden;
 }
 
+/* Grid - Siempre imagen izquierda, texto derecha */
 .sobre-creadora-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  align-items: center;
+  align-items: start;
+  /* Prevenir scroll */
+  overflow: hidden;
 }
 
-/* Columna de texto */
+/* Columna de texto - SIEMPRE A LA DERECHA */
 .sobre-creadora-text {
-  order: 2;
+  /* Por defecto en mobile va abajo, pero en desktop derecha */
 }
 
 .sobre-creadora .section-title {
@@ -47,19 +54,23 @@
   margin-bottom: 0;
 }
 
-/* Columna de imagen */
+/* Columna de imagen - CON ESPACIO PARA HOVER */
 .sobre-creadora-image {
-  order: 1;
   display: flex;
   justify-content: center;
+  /* Espacio reservado para el hover */
+  padding: 20px;
+  margin: -20px;
 }
 
 .image-container {
-  position: relative;
-  max-width: 300px;
+  max-width: 220px; /* Reducida para dar espacio al hover */
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  /* Espacio adicional interno */
+  padding: 15px;
+  margin: -15px;
 }
 
 .image-container img {
@@ -67,45 +78,28 @@
   height: auto;
   display: block;
   border-radius: 20px;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
+  /* Asegurar que el scale no cause scroll */
+  transform-origin: center;
 }
 
 .image-container:hover img {
-  transform: scale(1.05);
+  transform: scale(1.02); /* Efecto muy sutil */
 }
 
-.image-frame {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-  border: 2px solid #27ae60;
-  border-radius: 15px;
-  pointer-events: none;
-  opacity: 0.3;
-  transition: all 0.3s ease;
-}
-
-.image-container:hover .image-frame {
-  opacity: 0.6;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-}
-
-/* Placeholder de imagen */
+/* Placeholder de imagen - también con espacio */
 .image-placeholder {
-  width: 300px;
-  height: 400px;
-  background: linear-gradient(135deg, #f7f3e6 0%, #e8e1d1 100%);
+  width: 250px; /* Reducido */
+  height: 320px; /* Reducido */
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  border: 2px solid #27ae60;
+  /* Espacio para hover */
+  padding: 15px;
+  margin: -15px;
 }
 
 .placeholder-content {
@@ -116,10 +110,11 @@
 .placeholder-content i {
   color: #27ae60;
   margin-bottom: 1rem;
+  font-size: 2.2rem; /* Reducido */
 }
 
 .placeholder-content p {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Reducido */
   font-weight: 600;
   margin: 0 0 0.5rem 0;
 }
@@ -130,48 +125,57 @@
 }
 
 /* =======================
-   RESPONSIVE
+   RESPONSIVE - FIRST MOBILE
 ======================= */
 
-/* Mobile muy pequeño (hasta 360px) */
-@media (max-width: 360px) {
+/* Mobile pequeño (hasta 480px) */
+@media (max-width: 480px) {
   .sobre-creadora {
-    padding: 50px 15px;
-  }
-  
-  .sobre-creadora .section-title {
-    font-size: 1.5rem;
-  }
-  
-  .sobre-creadora-paragraphs p {
-    font-size: 0.9rem;
-  }
-  
-  .image-container,
-  .image-placeholder {
-    max-width: 250px;
-  }
-  
-  .image-placeholder {
-    height: 350px;
-  }
-}
-
-/* Mobile estándar (361px - 480px) */
-@media (min-width: 361px) and (max-width: 480px) {
-  .sobre-creadora {
-    padding: 60px 20px;
+    padding: 40px 15px;
   }
   
   .sobre-creadora .section-title {
     font-size: 1.6rem;
   }
+  
+  .sobre-creadora-paragraphs p {
+    font-size: 0.95rem;
+  }
+  
+  .sobre-creadora-image {
+    padding: 15px;
+    margin: -15px;
+  }
+  
+  .image-container,
+  .image-placeholder {
+    max-width: 200px;
+  }
+  
+  .image-container {
+    padding: 10px;
+    margin: -10px;
+  }
+  
+  .image-placeholder {
+    height: 280px;
+    padding: 10px;
+    margin: -10px;
+  }
+  
+  .placeholder-content i {
+    font-size: 2rem;
+  }
+  
+  .placeholder-content p {
+    font-size: 1rem;
+  }
 }
 
-/* Tablets / Mobile grande (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Tablets (481px - 768px) */
+@media (min-width: 481px) {
   .sobre-creadora {
-    padding: 80px 30px;
+    padding: 60px 25px;
   }
   
   .sobre-creadora .section-title {
@@ -182,79 +186,157 @@
     font-size: 1.05rem;
   }
   
+  .sobre-creadora-image {
+    padding: 18px;
+    margin: -18px;
+  }
+  
   .image-container,
   .image-placeholder {
-    max-width: 350px;
+    max-width: 280px;
+  }
+  
+  .image-container {
+    padding: 12px;
+    margin: -12px;
   }
   
   .image-placeholder {
-    height: 450px;
+    height: 350px;
+    padding: 12px;
+    margin: -12px;
   }
 }
 
-/* Desktop / Monitores estándar (769px - 1199px) */
-@media (min-width: 769px) and (max-width: 1199px) {
-  .sobre-creadora {
-    padding: 100px 40px;
-  }
-  
+/* Desktop pequeño (769px - 1024px) */
+@media (min-width: 769px) {
   .sobre-creadora-grid {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+    align-items: center;
+  }
+  
+  /* IMAGEN IZQUIERDA, TEXTO DERECHA */
+  .sobre-creadora-image {
+    order: 1;
+    justify-content: flex-start;
+    padding: 25px;
+    margin: -25px;
   }
   
   .sobre-creadora-text {
-    order: 1;
-  }
-  
-  .sobre-creadora-image {
     order: 2;
   }
   
   .sobre-creadora .section-title {
-    font-size: 2.2rem;
     text-align: left;
+    font-size: 2.2rem;
   }
   
   .sobre-creadora-paragraphs p {
-    font-size: 1.1rem;
     text-align: left;
+    font-size: 1.1rem;
+  }
+  
+  .sobre-creadora {
+    padding: 80px 40px;
   }
   
   .image-container,
   .image-placeholder {
-    max-width: 400px;
+    max-width: 320px;
+  }
+  
+  .image-container {
+    padding: 20px;
+    margin: -20px;
+  }
+  
+  .image-placeholder {
+    padding: 20px;
+    margin: -20px;
+    height: 400px;
   }
 }
 
-/* Desktop grande (1200px - 1919px) */
-@media (min-width: 1200px) and (max-width: 1919px) {
+/* Desktop estándar (1025px - 1440px) */
+@media (min-width: 1025px) {
   .sobre-creadora {
-    padding: 120px 60px;
+    padding: 100px 50px;
   }
   
   .sobre-creadora-grid {
-    grid-template-columns: 1fr 1fr;
     gap: 5rem;
   }
   
   .sobre-creadora .section-title {
     font-size: 2.5rem;
-    text-align: left;
   }
   
   .sobre-creadora-paragraphs p {
     font-size: 1.15rem;
-    text-align: left;
+    line-height: 1.8;
+  }
+  
+  .sobre-creadora-image {
+    padding: 30px;
+    margin: -30px;
   }
   
   .image-container,
   .image-placeholder {
-    max-width: 450px;
+    max-width: 350px;
+  }
+  
+  .image-container {
+    padding: 25px;
+    margin: -25px;
   }
   
   .image-placeholder {
-    height: 500px;
+    height: 450px;
+    padding: 25px;
+    margin: -25px;
+  }
+}
+
+/* Desktop grande (1441px - 1919px) */
+@media (min-width: 1441px) {
+  .sobre-creadora {
+    padding: 120px 60px;
+  }
+  
+  .sobre-creadora-grid {
+    gap: 6rem;
+  }
+  
+  .sobre-creadora .section-title {
+    font-size: 2.8rem;
+  }
+  
+  .sobre-creadora-paragraphs p {
+    font-size: 1.2rem;
+  }
+  
+  .sobre-creadora-image {
+    padding: 35px;
+    margin: -35px;
+  }
+  
+  .image-container,
+  .image-placeholder {
+    max-width: 380px;
+  }
+  
+  .image-container {
+    padding: 30px;
+    margin: -30px;
+  }
+  
+  .image-placeholder {
+    height: 480px;
+    padding: 30px;
+    margin: -30px;
   }
 }
 
@@ -264,41 +346,54 @@
     padding: 140px 80px;
   }
   
+  .sobre-creadora-content {
+    max-width: 1400px;
+  }
+  
   .sobre-creadora-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 7rem;
   }
   
   .sobre-creadora .section-title {
-    font-size: 3rem;
-    text-align: left;
+    font-size: 3rem; /* Reducido ligeramente */
   }
   
   .sobre-creadora-paragraphs p {
-    font-size: 1.25rem;
-    text-align: left;
-    line-height: 1.8;
+    font-size: 1.25rem; /* Reducido ligeramente */
+    line-height: 1.9;
+  }
+  
+  .sobre-creadora-image {
+    padding: 40px;
+    margin: -40px;
   }
   
   .image-container,
   .image-placeholder {
-    max-width: 500px;
+    max-width: 400px; /* Reducido de 500px */
+  }
+  
+  .image-container {
+    padding: 35px;
+    margin: -35px;
   }
   
   .image-placeholder {
-    height: 550px;
+    height: 500px; /* Reducido de 600px */
+    padding: 35px;
+    margin: -35px;
   }
   
   .placeholder-content i {
-    font-size: 4rem;
+    font-size: 3rem; /* Reducido */
   }
   
   .placeholder-content p {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Reducido */
   }
   
   .placeholder-content small {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Reducido */
   }
 }
 
