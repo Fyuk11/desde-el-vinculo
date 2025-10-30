@@ -259,9 +259,7 @@ sections:
         titulo: "GARANTÍA DE 7 DÍAS"
         descripcion: "Si no te convence, te devolvemos el 100% sin preguntas."
       
-      - icono: "🎁"
-        titulo: "BONUS GRATIS"
-        descripcion: "Guía PDF 'Cómo detectar y prevenir el estrés crónico en tu perro'"
+
 
 
     # 🟩 SECCIÓN: MINI CTA FINAL

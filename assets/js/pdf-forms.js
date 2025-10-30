@@ -21,6 +21,7 @@ async function handlePdfFormSubmit(e) {
   const form = e.target;
   const formData = new FormData(form);
   const email = formData.get('email');
+  const formName = form.getAttribute('name') || 'pdf-form';
   
   if (!isValidEmail(email)) {
     showFormMessage(form, 'Por favor, ingresa un email válido', 'error');
@@ -30,63 +31,61 @@ async function handlePdfFormSubmit(e) {
   // Mostrar estado de carga
   const button = form.querySelector('button');
   const originalText = button.innerHTML;
-  const originalBg = button.style.background;
   
   button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
   button.disabled = true;
 
   try {
-    // Simular envío (reemplazar con tu lógica real)
-    await submitToEmailService(email, form.name);
+    // Enviar a Netlify Forms
+    await submitToNetlifyForms(email, formName);
     
-    // Éxito
-    showFormMessage(form, '¡Perfecto! Revisa tu email para descargar el PDF', 'success');
+    // Éxito - Redirigir al PDF
+    showFormMessage(form, '¡Perfecto! Redirigiendo a tu PDF...', 'success');
     button.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
-    button.style.background = '#27ae60';
     
-    // Reset después de éxito
+    // Guardar en localStorage para tracking
+    localStorage.setItem('pdf-lead-email', email);
+    localStorage.setItem('pdf-download-time', new Date().toISOString());
+    localStorage.setItem('pdf-form-source', formName);
+    
+    // Redirigir al PDF después de 1.5 segundos
     setTimeout(() => {
-      form.reset();
-      button.innerHTML = originalText;
-      button.style.background = originalBg;
-      button.disabled = false;
-      clearFormMessage(form);
-    }, 5000);
+      // Cambia esta URL por la ruta real de tu PDF
+      window.location.href = '/assets/pdf/5-claves-lenguaje-canino.pdf';
+    }, 1500);
     
   } catch (error) {
     // Error
+    console.error('Error enviando formulario:', error);
     showFormMessage(form, 'Error al enviar. Intenta nuevamente.', 'error');
     button.innerHTML = originalText;
-    button.style.background = originalBg;
     button.disabled = false;
   }
 }
 
-// Función para enviar a servicio de email (personalizar según tu setup)
-async function submitToEmailService(email, formName) {
-  // Aquí integras con tu servicio de email marketing
-  // Ejemplos: Mailchimp, ConvertKit, SendGrid, Netlify Forms, etc.
-  
-  console.log(`📧 Email capturado desde ${formName}:`, email);
-  
-  // Simular delay de red
-  return new Promise((resolve) => {
-    setTimeout(resolve, 1500);
-  });
-  
-  // Ejemplo con Netlify Forms (si usas Netlify):
-  /*
+// Función para enviar a Netlify Forms
+async function submitToNetlifyForms(email, formName) {
+  const formData = new URLSearchParams();
+  formData.append('form-name', formName);
+  formData.append('email', email);
+  formData.append('timestamp', new Date().toISOString());
+  formData.append('source', window.location.href);
+
   const response = await fetch('/', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-      'form-name': formName,
-      'email': email
-    }).toString()
+    headers: { 
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json'
+    },
+    body: formData.toString()
   });
   
-  if (!response.ok) throw new Error('Error en el envío');
-  */
+  if (!response.ok) {
+    throw new Error(`Error HTTP: ${response.status}`);
+  }
+  
+  console.log(`✅ Lead capturado en ${formName}:`, email);
+  return response;
 }
 
 // Validación de email
@@ -108,14 +107,15 @@ function showFormMessage(form, message, type) {
   
   // Estilos básicos para el mensaje
   messageEl.style.cssText = `
-    padding: 10px 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    padding: 12px 16px;
+    margin: 1rem 0;
+    border-radius: 10px;
+    font-size: 0.95rem;
     text-align: center;
+    font-weight: 500;
     background: ${type === 'success' ? '#d4edda' : '#f8d7da'};
     color: ${type === 'success' ? '#155724' : '#721c24'};
-    border: 1px solid ${type === 'success' ? '#c3e6cb' : '#f5c6cb'};
+    border: 2px solid ${type === 'success' ? '#c3e6cb' : '#f5c6cb'};
   `;
   
   form.insertBefore(messageEl, form.firstChild);
@@ -126,4 +126,20 @@ function clearFormMessage(form) {
   if (existingMessage) {
     existingMessage.remove();
   }
+}
+
+// Después de localStorage.setItem...
+if (typeof gtag !== 'undefined') {
+  gtag('event', 'generate_lead', {
+    'event_category': 'pdf_download',
+    'event_label': formName
+  });
+}
+
+// O para Facebook Pixel
+if (typeof fbq !== 'undefined') {
+  fbq('track', 'Lead', {
+    content_name: 'PDF Gratuito',
+    content_category: 'Educación Canina'
+  });
 }

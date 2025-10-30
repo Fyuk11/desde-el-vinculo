@@ -1,3 +1,14 @@
 [build]
   command = "npm run build"
   publish = "_site"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Para desarrollo local con Netlify Forms
+[dev]
+  command = "npx eleventy --serve"
+  targetPort = 8080
+  publish = "_site"

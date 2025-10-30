@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Claves para Comprender el Lenguaje de tu Perro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.8;
+            color: #2d3748;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-bottom: 10mm;
+            page-break-after: always;
+            position: relative;
+        }
+
+        .cover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40mm 20mm;
+        }
+
+        .cover-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .cover h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 42px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cover-subtitle {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 500px;
+        }
+
+        .cover-brand {
+            margin-top: 60px;
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .cover-tagline {
+            font-size: 14px;
+            font-style: italic;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        .header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            color: #2d3748;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            color: #667eea;
+            font-size: 28px;
+            margin: 30px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h3 {
+            font-family: 'Merriweather', serif;
+            color: #4a5568;
+            font-size: 20px;
+            margin: 25px 0 15px;
+        }
+
+        .key-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        .intro {
+            background: #f7fafc;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+
+        .intro p {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: #edf2f7;
+            border-left: 4px solid #764ba2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .example {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .example h4 {
+            color: #c53030;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .tip {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .tip h4 {
+            color: #22543d;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        strong {
+            color: #2d3748;
+            font-weight: 700;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 15mm;
+            left: 20mm;
+            right: 20mm;
+            text-align: center;
+            font-size: 12px;
+            color: #718096;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 10mm;
+            right: 20mm;
+            font-size: 12px;
+            color: #a0aec0;
+        }
+
+        .checklist {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .checklist h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: #f7fafc;
+            border-radius: 5px;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #667eea;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .final-cta h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .final-cta p {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .signal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .signal-card {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+
+        .signal-card h5 {
+            color: #667eea;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .signal-card p {
+            font-size: 13px;
+            margin: 0;
+            text-align: left;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- PORTADA -->
+        <div class="page cover">
+            <div class="cover-icon">🐾</div>
+            <h1>5 Claves para Comprender<br>el Lenguaje de tu Perro</h1>
+            <p class="cover-subtitle">
+                Las señales que tu perro te está dando TODO el tiempo<br>
+                (y que probablemente estás ignorando sin saberlo)
+            </p>
+            <div class="cover-brand">Desde el Vínculo</div>
+            <div class="cover-tagline">Educación Canina Consciente</div>
+        </div>
+
+        <!-- PÁGINA 1: INTRODUCCIÓN -->
+        <div class="page">
+            <div class="header">
+                <h1>Tu perro te habla constantemente</h1>
+            </div>
+
+            <div class="intro">
+                <p><strong>¿Sabías que tu perro te está comunicando sus emociones y necesidades TODO el tiempo?</strong></p>
+                <p>El problema no es que no hable. El problema es que no sabemos escucharlo.</p>
+            </div>
+
+            <p>Los perros se comunican principalmente a través del <strong>lenguaje corporal</strong>. Cada postura, cada movimiento de cola, cada mirada tiene un significado.</p>
+
+            <p>Cuando aprendés a leer estas señales, todo cambia:</p>
+
+            <ul>
+                <li><strong>Dejás de frustrarte</strong> porque ahora entendés qué está pasando</li>
+                <li><strong>Evitás conflictos</strong> antes de que escalen</li>
+                <li><strong>Fortalecés el vínculo</strong> porque tu perro se siente comprendido</li>
+                <li><strong>Mejorás la convivencia</strong> de forma natural</li>
+            </ul>
+
+            <p>En esta guía vas a descubrir las <strong>5 señales más importantes</strong> que tu perro usa para comunicarse. Son sencillas de identificar, pero increíblemente poderosas.</p>
+
+            <div class="highlight-box">
+                <p><strong>💡 Consejo importante:</strong></p>
+                <p>Mientras leés esta guía, pensá en situaciones recientes con tu perro. Seguramente vas a reconocer muchas de estas señales y vas a decir: <em>"¡Ah! Por eso hacía eso..."</em></p>
+            </div>
+
+            <h3>¿Por qué es tan importante aprender su lenguaje?</h3>
+
+            <p>Porque <strong>la mayoría de los "problemas de conducta" no son problemas</strong>. Son intentos de comunicación que no estamos entendiendo.</p>
+
+            <p>Cuando tu perro ladra excesivamente, tira de la correa, se pone ansioso o reacciona mal con otros perros, está intentando decirte algo. Y si no lo escuchás, va a seguir intentándolo de formas cada vez más intensas.</p>
+
+            <p><strong>Aprender su lenguaje es el primer paso para transformar tu relación.</strong></p>
+
+            <div class="footer">
+                © 2025 Desde el Vínculo - Educación Canina Consciente | @desdeel.vinculo
+            </div>
+            <div class="page-number">1</div>
+        </div>
+
+        <!-- PÁGINA 2: CLAVE 1 -->
+        <div class="page">
+            <h2><span class="key-number">1</span> Lamerse el hocico</h2>
+
+            <p><strong>Una de las señales de calma más comunes y malinterpretadas.</strong></p>
+
+            <p>Cuando tu perro se lame el hocico rápidamente (un lamido corto, casi imperceptible), NO está pensando en comida. Está comunicando <strong>incomodidad leve o intento de calmarse</strong>.</p>
+
+            <h3>¿Qué significa?</h3>
+
+            <ul>
+                <li>"Estoy un poco incómodo con esta situación"</li>
+                <li>"Necesito bajar la tensión"</li>
+                <li>"Esto es demasiado intenso para mí"</li>
+            </ul>
+
+            <div class="example">
+                <h4>📸 Ejemplos en la vida real:</h4>
+                <p><strong>Situación 1:</strong> Lo estás retando y de repente se lame el hocico → Está intentando calmarse y calmar la situación</p>
+                <p><strong>Situación 2:</strong> Llega una visita y tu perro se acerca pero se lame repetidamente → Está un poco nervioso pero intenta gestionar la situación</p>
+                <p><strong>Situación 3:</strong> Durante una sesión de fotos o cuando lo mirás fijo → Se siente observado y es su forma de decir "ok, ok, entendí"</p>
+            </div>
+
+            <div class="tip">
+                <h4>✅ Cómo responder correctamente:</h4>
+                <p><strong>NO hagas:</strong> Insistir, acercarte más, seguir con lo que estabas haciendo</p>
+                <p><strong>SÍ hacé:</strong> Bajá la intensidad de lo que estés haciendo. Dale un momento. Respetá que está comunicando una necesidad de espacio o calma.</p>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>🔍 Diferencia clave:</strong></p>
+                <p><strong>Lamido por comida:</strong> Lento, con anticipación, mirando la comida</p>
+                <p><strong>Lamido de calma:</strong> Rápido, casi nervioso, en contexto de tensión</p>
+            </div>
+
+            <h3>Ejercicio práctico:</h3>
+
+            <p>Durante los próximos 3 días, <strong>prestá atención cada vez que tu perro se lama el hocico</strong>. Anotá:</p>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <span>¿Qué estaba pasando en ese momento?</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <span>¿Había algo que pudiera generarle incomodidad?</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <span>¿Cómo respondiste vos?</span>
+                </div>
+            </div>
+
+            <p>Vas a sorprenderte de cuántas veces lo hace y no lo notabas.</p>
+
+            <div class="footer">
+                © 2025 Desde el Vínculo - Educación Canina Consciente | @desdeel.vinculo
+            </div>
+            <div class="page-number">2</div>
+        </div>
+
+        <!-- PÁGINA 3: CLAVE 2 -->
+        <div class="page">
+            <h2><span class="key-number">2</span> Girar la cabeza / Evitar la mirada</h2>
+
+            <p><strong>La forma más clara de decir "no quiero conflicto".</strong></p>
+
+            <p>Cuando tu perro gira la cabeza hacia un lado o evita el contacto visual directo, está usando una de las señales de calma más poderosas del lenguaje canino.</p>
+
+            <h3>¿Qué está comunicando?</h3>
+
+            <ul>
+                <li>"No busco pelea, vengo en paz"</li>
+                <li>"Esto es muy intenso, necesito bajar la presión"</li>
+                <li>"Entendí, no hace falta que sigas"</li>
+            </ul>
+
+            <div class="example">
+                <h4>📸 Situaciones comunes donde la verás:</h4>
+                <p><strong>Con otros perros:</strong> Si otro perro se acerca muy directo y rápido, tu perro puede girar la cabeza para comunicar que no quiere conflicto.</p>
+                <p><strong>Contigo:</strong> Cuando lo retás o te acercás muy rápido frontalmente, puede girar la cabeza. NO es "desafío" ni "ignorarte", es comunicación de calma.</p>
+                <p><strong>Con extraños:</strong> Alguien se inclina sobre él para acariciarlo y gira la cabeza → está incómodo con esa invasión de espacio.</p>
+            </div>
+
+            <div class="tip">
+                <h4>✅ Cómo responder:</h4>
+                <p><strong>Respetá la señal.</strong> Si gira la cabeza, es porque algo es demasiado intenso o directo para él en ese momento.</p>
+                <p><strong>Bajá tu energía.</strong> No te acerques más, no insistas, dale espacio.</p>
+                <p><strong>Acercate en curva, no frontalmente.</strong> Los perros educados se acercan en arco, no en línea recta. Hacé lo mismo.</p>
+            </div>
+
+            <h3>¿Por qué la ignoramos tanto?</h3>
+
+            <p>Porque desde lo humano interpretamos que "no nos mira = nos ignora" o "nos desafía". Pero es exactamente lo contrario: <strong>está siendo respetuoso y pidiendo respeto</strong>.</p>
+
+            <div class="highlight-box">
+                <p><strong>⚠️ Error grave:</strong></p>
+                <p>Forzar el contacto visual o la interacción cuando el perro gira la cabeza. Esto puede generar que eventualmente deje de comunicar y pase directamente a respuestas más intensas (gruñidos, mordidas).</p>
+            </div>
+
+            <div class="signal-grid">
+                <div class="signal-card">
+                    <h5>❌ NO interpretes como:</h5>
+                    <p>• "Me está ignorando"<br>• "Me está desafiando"<br>• "No le importo"</p>
+                </div>
+                <div class="signal-card">
+                    <h5>✅ Interpretá como:</h5>
+                    <p>• "Necesito un momento"<br>• "Esto es mucho"<br>• "Bajemos la intensidad"</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                © 2025 Desde el Vínculo - Educación Canina Consciente | @desdeel.vinculo
+            </div>
+            <div class="page-number">3</div>
+        </div>
+
+        <!-- PÁGINA 4: CLAVE 3 -->
+        <div class="page">
+            <h2><span class="key-number">3</span> Bostezar (sin tener sueño)</h2>
+
+            <p><strong>El bostezo que no tiene nada que ver con dormir.</strong></p>
+
+            <p>Si tu perro bosteza en medio de una situación (no cuando se despierta o está por dormir), NO es sueño. Es <strong>estrés y un intento activo de autorregularse</strong>.</p>
+
+            <h3>¿Cuándo verás esta señal?</h3>
+
+            <ul>
+                <li>En el veterinario (ambiente estresante)</li>
+                <li>Durante entrenamiento o cuando le pedís algo repetidamente</li>
+                <li>Cuando hay tensión en el ambiente (discusión familiar, visita incómoda)</li>
+                <li>En lugares nuevos o situaciones desconocidas</li>
+            </ul>
+
+            <div class="example">
+                <h4>📸 Caso real:</h4>
+                <p>Estás intentando enseñarle un truco nuevo. Lo repetís varias veces. De repente bosteza.</p>
+                <p><strong>Interpretación incorrecta:</strong> "Está aburrido, no le interesa"</p>
+                <p><strong>Interpretación correcta:</strong> "Está estresado o frustrado, necesita una pausa"</p>
+            </div>
+
+            <div class="tip">
+                <h4>✅ Qué hacer cuando bosteza:</h4>
+                <p><strong>1. Pausá lo que estés haciendo</strong> - Dale un respiro de 2-3 minutos</p>
+                <p><strong>2. Bajá la exigencia</strong> - Quizás estás pidiendo demasiado muy rápido</p>
+                <p><strong>3. Cambiar de actividad</strong> - A veces necesita resetear mentalmente</p>
+            </div>
+
+            <h3>¿Por qué bosteza para calmarse?</h3>
+
+            <p>El bostezo tiene un efecto fisiológico: <strong>oxigena el cerebro y libera tensión facial</strong>. Es un mecanismo natural de autorregulación.</p>
+
+            <p>Cuando lo ves bostezar, tu perro está literalmente <strong>intentando calmarse solo</strong>. Es una buena señal, significa que tiene herramientas de autorregulación.</p>
+
+            <div class="highlight-box">
+                <p><strong>💡 Dato interesante:</strong></p>
+                <p>Los bostezos son "contagiosos" entre perros (y entre perros y humanos). Si vos bostezás cerca de tu perro, puede bostezar también. Esto es conexión empática.</p>
+            </div>
+
+            <h3>Diferenciá los bostezos:</h3>
+
+            <div class="signal-grid">
+                <div class="signal-card">
+                    <h5>Bostezo de sueño</h5>
+                    <p>• Al despertar<br>• Antes de dormir<br>• Postura relajada<br>• Contexto de calma</p>
+                </div>
+                <div class="signal-card">
+                    <h5>Bostezo de estrés</h5>
+                    <p>• En situación tensa<br>• Repetido varias veces<br>• Acompañado de otras señales<br>• Contexto de presión</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                © 2025 Desde el Vínculo - Educación Canina Consciente | @desdeel.vinculo
+            </div>
+            <div class="page-number">4</div>
+        </div>
+
+        <!-- PÁGINA 5: CLAVE 4 -->
+        <div class="page">
+            <h2><span class="key-number">4</span> Cola entre las patas</h2>
+
+            <p><strong>La señal de miedo más evidente (y la que más se malinterpreta).</strong></p>
+
+            <p>Cuando un perro mete la cola completamente entre las patas, escondida, está comunicando <strong>miedo intenso</strong>. No es sumisión "sana", es terror.</p>
+
+            <h3>¿Qué está sintiendo?</h3>
+
+            <ul>
+                <li>"Tengo mucho miedo"</li>
+                <li>"No me hagas daño"</li>
+                <li>"Estoy aterrorizado con esta situación"</li>
+            </ul>
+
+            <div class="example">
+                <h4>📸 Contextos típicos:</h4>
+                <p><strong>Fuegos artificiales / Tormentas:</strong> Miedo a ruidos fuertes</p>
+                <p><strong>Veterinario:</strong> Miedo asociado a experiencias previas</p>
+                <p><strong>Ante un perro o persona amenazante:</strong> Señal clara de "no quiero problemas, tengo miedo"</p>
+                <p><strong>Cuando lo retás muy fuerte:</strong> Si tu perro mete la cola cuando lo retás, no es respeto, es MIEDO. Y eso no es saludable.</p>
+            </div>
+
+            <div class="tip">
+                <h4>✅ Cómo acompañar el miedo:</h4>
+                <p><strong>NO forzarlo</strong> a "enfrentar" lo que le da miedo. Eso genera trauma.</p>
+                <p><strong>Ofrecele seguridad:</strong> Tu presencia calmada, un lugar donde refugiarse</p>
+                <p><strong>Trabajá gradualmente:</strong> Exposición muy lenta y con asociaciones positivas</p>
+                <p><strong>Nunca castigues el miedo:</strong> No se le puede "sacar el miedo a retazos"</p>
+            </div>
+
+            <h3>La diferencia entre cola baja y cola escondida:</h3>
+
+            <p><strong>Cola baja (a media altura o menos):</strong> Inseguridad, cautela, sumisión leve → Manejable</p>
+
+            <p><strong>Cola completamente entre las patas:</strong> Miedo intenso, pánico → Requiere intervención inmediata y cambio de situación</p>
+
+            <div class="highlight-box">
+                <p><strong>⚠️ MUY IMPORTANTE:</strong></p>
+                <p>Si tu perro vive con la cola entre las patas constantemente (no solo en situaciones específicas), hay algo grave en su bienestar emocional. Necesita ayuda profesional.</p>
+            </div>
+
+            <h3>¿Tu perro tiene cola corta o amputada?</h3>
+
+            <p>Si tu perro no tiene cola (por genética o amputación), prestá EXTRA atención a:</p>
+            <ul>
+                <li>Postura corporal general (agachada = miedo)</li>
+                <li>Orejas pegadas hacia atrás</li>
+                <li>Cuerpo tenso o tembloroso</li>
+            </ul>
+
+            <div class="footer">
+                © 2025 Desde el Vínculo - Educación Canina Consciente | @desdeel.vinculo
+            </div>
+            <div class="page-number">5</div>
+        </div>
+
+        <!-- PÁGINA 6: CLAVE 5 -->
+        <div class="page">
+            <h2><span class="key-number">5</span> Olfatear el suelo repentinamente</h2>
+
+            <p><strong>La señal de calma más subestimada y poderosa.</strong></p>
+
+            <p>Estás en medio de algo (entrenamiento, paseo, interacción) y de repente tu perro empieza a <strong>olfatear el suelo intensamente</strong>. ¿Qué pasó?</p>
+
+            <p>NO es que "se distrajo" ni que "te está ignorando". Es una <strong>conducta de desplazamiento</strong>: necesita una pausa mental/emocional.</p>
+
+            <h3>¿Qué está comunicando?</h3>
+
+            <ul>
+                <li>"Necesito un momento para procesar"</li>
+                <li>"Esto es demasiada presión ahora mismo"</li>
+                <li>"Estoy intentando calmarme"</li>
+            </ul>
+
+            <div class="example">
+                <h4>📸 Situaciones donde lo verás:</h4>
+                <p><strong>Durante entrenamiento:</strong> Le pedís algo, no lo logra, y empieza a oler el piso → Frustración/estrés, necesita pausa</p>
+                <p><strong>Encuentro con otro perro:</strong> Antes de saludarse, ambos perros olfatean el piso → Están bajando la tensión social</p>
+                <p><strong>Situación incómoda:</strong> Visita que lo agobia, se va y olfatea intensamente → Autorregulación</p>
+            </div>
+
+            <div class="tip">
+                <h4>✅ Cómo responder:</h4>
+                <p><strong>DEJALO OLER.</strong> No tires de la correa, no lo interrumpas. Está haciendo algo importante: regularse.</p>
+                <p><strong>Tomate una pausa vos también.</strong> Si está olfateando porque algo es demasiado, respetá ese mensaje.</p>
+                <p><strong>En paseos: el olfateo es esencial.</strong> No es "pérdida de tiempo", es su forma de procesar el mundo.</p>
+            </div>
+
+            <h3>¿Por qué el olfateo es tan regulatorio?</h3>
+
+            <p>El olfato es el sentido primario del perro. Cuando olfatean:</p>
+
+            <ul>
+                <li>Activan el sistema parasimpático (calma)</li>
+                <li>Procesan información del entorno</li>
+                <li>Bajan la frecuencia cardíaca</li>
+                <li>Se enfocan en algo concreto (distrae de la ansiedad)</li>
+            </ul>
+
+            <p><strong>20 minutos de olfateo libre = 1 hora de ejercicio físico en términos de cansancio mental.</strong></p>
+
+            <div class="highlight-box">
+                <p><strong>💡 Cambio de perspectiva:</strong></p>
+                <p>
