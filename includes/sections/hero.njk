@@ -43,11 +43,11 @@
             <span class="pdf-line1">{{ section_data.pdf_regalo.texto_linea1 }}</span>
             <span class="pdf-line2">{{ section_data.pdf_regalo.texto_linea2 }}</span>
           </div>
-          <form class="pdf-form" data-netlify="true" name="{{ section_data.pdf_regalo.form_id }}">
-            <input type="email" name="email" placeholder="Tu email aquí..." required>
-            <button type="submit">Enviarme el PDF</button>
-            <p class="pdf-privacy">🔒 Respetamos tu privacidad. Sin spam.</p>
-          </form>
+          <form class="pdf-form" netlify name="{{ section_data.pdf_regalo.form_id }}">
+  <input type="email" name="email" placeholder="Tu email aquí..." required>
+  <button type="submit">Enviarme el PDF</button>
+  <p class="pdf-privacy">🔒 Respetamos tu privacidad. Sin spam.</p>
+</form>
         </div>
       </div>
       {% endif %}

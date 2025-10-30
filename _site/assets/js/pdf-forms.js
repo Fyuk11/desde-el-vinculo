@@ -1,4 +1,4 @@
-// pdf-forms.js
+// pdf-forms.js - Versión Netlify Forms
 export function initPdfForms() {
   const forms = document.querySelectorAll('.pdf-form, .pdf-form-main');
   
@@ -10,20 +10,19 @@ export function initPdfForms() {
   console.log(`📝 Inicializando ${forms.length} formulario(s) PDF`);
   
   forms.forEach((form, index) => {
+    // Netlify maneja el envío, nosotros solo el feedback visual
     form.addEventListener('submit', handlePdfFormSubmit);
     console.log(`✅ Formulario PDF ${index + 1} inicializado`);
   });
 }
 
-async function handlePdfFormSubmit(e) {
-  e.preventDefault();
-  
+function handlePdfFormSubmit(e) {
   const form = e.target;
-  const formData = new FormData(form);
-  const email = formData.get('email');
-  const formName = form.getAttribute('name') || 'pdf-form';
+  const email = form.querySelector('input[type="email"]').value;
+  const formName = form.getAttribute('name');
   
   if (!isValidEmail(email)) {
+    e.preventDefault(); // Prevenir envío si el email no es válido
     showFormMessage(form, 'Por favor, ingresa un email válido', 'error');
     return;
   }
@@ -35,57 +34,21 @@ async function handlePdfFormSubmit(e) {
   button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
   button.disabled = true;
 
-  try {
-    // Enviar a Netlify Forms
-    await submitToNetlifyForms(email, formName);
-    
-    // Éxito - Redirigir al PDF
-    showFormMessage(form, '¡Perfecto! Redirigiendo a tu PDF...', 'success');
-    button.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
-    
-    // Guardar en localStorage para tracking
-    localStorage.setItem('pdf-lead-email', email);
-    localStorage.setItem('pdf-download-time', new Date().toISOString());
-    localStorage.setItem('pdf-form-source', formName);
-    
-    // Redirigir al PDF después de 1.5 segundos
-    setTimeout(() => {
-      // Cambia esta URL por la ruta real de tu PDF
+  // Netlify se encarga del envío, nosotros del feedback
+  console.log(`📧 Enviando formulario ${formName} con email:`, email);
+  
+  // Guardar para tracking
+  localStorage.setItem('pdf-lead-email', email);
+  localStorage.setItem('pdf-download-time', new Date().toISOString());
+  localStorage.setItem('pdf-form-source', formName);
+  
+  // Netlify redirigirá después del envío, pero podemos agregar un timeout de seguridad
+  setTimeout(() => {
+    // Solo si Netlify no redirigió automáticamente
+    if (!window.location.href.includes('pdf')) {
       window.location.href = '/assets/pdf/5-claves-lenguaje-canino.pdf';
-    }, 1500);
-    
-  } catch (error) {
-    // Error
-    console.error('Error enviando formulario:', error);
-    showFormMessage(form, 'Error al enviar. Intenta nuevamente.', 'error');
-    button.innerHTML = originalText;
-    button.disabled = false;
-  }
-}
-
-// Función para enviar a Netlify Forms
-async function submitToNetlifyForms(email, formName) {
-  const formData = new URLSearchParams();
-  formData.append('form-name', formName);
-  formData.append('email', email);
-  formData.append('timestamp', new Date().toISOString());
-  formData.append('source', window.location.href);
-
-  const response = await fetch('/', {
-    method: 'POST',
-    headers: { 
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Accept': 'application/json'
-    },
-    body: formData.toString()
-  });
-  
-  if (!response.ok) {
-    throw new Error(`Error HTTP: ${response.status}`);
-  }
-  
-  console.log(`✅ Lead capturado en ${formName}:`, email);
-  return response;
+    }
+  }, 3000);
 }
 
 // Validación de email
@@ -105,7 +68,6 @@ function showFormMessage(form, message, type) {
     ${message}
   `;
   
-  // Estilos básicos para el mensaje
   messageEl.style.cssText = `
     padding: 12px 16px;
     margin: 1rem 0;

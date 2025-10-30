@@ -7,7 +7,12 @@
   to = "/index.html"
   status = 200
 
-# Para desarrollo local con Netlify Forms
+# Redirección después del envío de formularios
+[[redirects]]
+  from = "/success"
+  to = "/assets/pdf/5-claves-lenguaje-canino.pdf"
+  status = 200
+
 [dev]
   command = "npx eleventy --serve"
   targetPort = 8080
