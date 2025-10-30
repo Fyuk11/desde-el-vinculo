@@ -1,0 +1,36 @@
+{# sections/modulos-curso.njk #}
+<section class="modulos-curso" id="modulos">
+  <div class="container">
+    <div class="modulos-content">
+      
+      <!-- Título y subtítulo -->
+      <div class="modulos-header">
+        <h2 class="section-title fade-up animate-on-scroll">
+          {{ section_data.title }}
+        </h2>
+        <p class="modulos-subtitle fade-up delay-1 animate-on-scroll">
+          {{ section_data.subtitle }}
+        </p>
+      </div>
+
+      <!-- Grid de módulos -->
+      <div class="modulos-grid">
+        {% for modulo in section_data.modulos %}
+        <div class="modulo-card fade-up delay-{{ loop.index }} animate-on-scroll">
+          <div class="modulo-header">
+            <span class="modulo-number">MÓDULO {{ loop.index }}</span>
+            <h3 class="modulo-title">{{ modulo.titulo }}</h3>
+          </div>
+          <div class="modulo-content">
+            <p class="modulo-descripcion">{{ modulo.descripcion }}</p>
+          </div>
+          <div class="modulo-footer">
+            <i class="fas fa-book-open"></i>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>

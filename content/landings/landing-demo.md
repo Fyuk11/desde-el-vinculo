@@ -198,7 +198,72 @@ sections:
     text: -✅ Acceso inmediato al PDF completo (145+ páginas)
           -✅ Garantía de 7 días - 100% reembolso
           -✅ Pago seguro con Hotmart  
+
+
+  # 🟩 SECCIÓN 11: MÓDULOS DEL CURSO
+  - type: modulos-curso
+    title: "6 módulos para transformar tu relación con tu perro"
+    subtitle: "Más de 145 páginas de contenido profundo, práctico y aplicable. Cada módulo incluye ejercicios, reflexiones y herramientas descargables."
+    modulos:
+      - titulo: "Fundamentos del Vínculo Consciente"
+        descripcion: "Entendé qué es la autonomía canina (no es 'hacer lo que quiera'), por qué la obediencia NO es bienestar, y cómo el enfoque Sistémico-Emocional-Cognitivo cambia tu forma de educar desde la raíz. Los 3 pilares que transforman todo."
+      
+      - titulo: "Descifrando el Lenguaje Canino"
+        descripcion: "Aprendé a leer las 20+ señales de calma (Turid Rugaas), interpretar vocalizaciones, lenguaje corporal completo y señales de estrés. Comprenderás lo que tu perro te está diciendo TODO el tiempo, aunque no hable."
+      
+      - titulo: "La Dimensión Emocional del Vínculo"
+        descripcion: "Descubrí las 5 emociones básicas en perros, cómo TU estado emocional impacta directamente en el suyo, qué es el locus de control y por qué la coherencia emocional es tu herramienta educativa más poderosa."
+      
+      - titulo: "Comunicación Consciente y Bidireccional"
+        descripcion: "Dominá la comunicación real: tu cuerpo habla antes que tu voz, cómo dar límites desde la calma sin agresión, el poder del silencio en la educación, y por qué escuchar su 'no' fortalece (no debilita) el vínculo."
+      
+      - titulo: "Autorregulación, Autonomía y Convivencia Armónica"
+        descripcion: "Construí una convivencia equilibrada: autocontrol (más valioso que obediencia), rutinas que sostienen bienestar, enriquecimiento cognitivo y olfativo, y tu plan de acción personalizado para aplicar todo lo aprendido."
+      
+      - titulo: "Casos Prácticos y Resolución de Conflictos"
+        descripcion: "Aplicá todo a situaciones reales: ladridos excesivos (qué comunican), ansiedad por separación (protocolo completo gradual), reactividad en paseos (trabajo desde la emoción), miedos y fobias, límites con niños/visitas/otros perros, y cómo reconstruir un vínculo dañado."        
   
+    # 🟩 SECCIÓN 12: QUÉ INCLUYE EL CURSO
+  - type: que-incluye
+    title: "Todo lo que recibís hoy"
+    items:
+      - icono: "📚"
+        titulo: "6 MÓDULOS COMPLETOS EN PDF"
+        descripcion: "145+ páginas de contenido profundo, claro y aplicable desde el primer día."
+      
+      - icono: "✍️"
+        titulo: "EJERCICIOS PRÁCTICOS"
+        descripcion: "En cada módulo: actividades concretas para implementar inmediatamente."
+      
+      - icono: "📊"
+        titulo: "PLANTILLAS DESCARGABLES"
+        descripcion: "Diario emocional tutor-perro, Plan de bienestar personalizado, Checklist de comunicación consciente, Guía de enriquecimiento semanal, Registro de señales y conductas"
+      
+      - icono: "📖"
+        titulo: "CASOS REALES RESUELTOS"
+        descripcion: "3 casos documentados paso a paso desde el enfoque vincular."
+      
+      - icono: "🎓"
+        titulo: "CERTIFICADO DE FINALIZACIÓN"
+        descripcion: "Descargable, personalizado, para imprimir o compartir en redes."
+      
+      - icono: "⏰"
+        titulo: "ACCESO INMEDIATO Y DE POR VIDA"
+        descripcion: "Descargás el PDF ahora mismo y lo tenés para siempre."
+      
+      - icono: "📱"
+        titulo: "100% COMPATIBLE"
+        descripcion: "Leelo en celular, tablet, computadora o imprimilo completo."
+      
+      - icono: "🔒"
+        titulo: "GARANTÍA DE 7 DÍAS"
+        descripcion: "Si no te convence, te devolvemos el 100% sin preguntas."
+      
+      - icono: "🎁"
+        titulo: "BONUS GRATIS"
+        descripcion: "Guía PDF 'Cómo detectar y prevenir el estrés crónico en tu perro'"
+
+
     # 🟩 FOOTER
   - type: footer
     email: "desdeel.vinculo@gmail.com"
