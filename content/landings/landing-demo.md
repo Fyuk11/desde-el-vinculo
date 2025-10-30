@@ -264,6 +264,16 @@ sections:
         descripcion: "Guía PDF 'Cómo detectar y prevenir el estrés crónico en tu perro'"
 
 
+    # 🟩 SECCIÓN: MINI CTA FINAL
+  - type: mini-cta
+    title: "Transformá tu relación con tu perro hoy mismo"
+    subtitle: "Accedé al curso completo y comenzá a construir un vínculo basado en comprensión, respeto y conexión real."
+    cta:
+      texto: "Acceder al curso ahora"
+      url: "https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T"
+    garantia: "Garantía de 7 días - 100% de reembolso"
+
+
     # 🟩 FOOTER
   - type: footer
     email: "desdeel.vinculo@gmail.com"

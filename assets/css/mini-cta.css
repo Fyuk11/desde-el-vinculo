@@ -1,0 +1,260 @@
+/* =======================
+   MINI CTA SECTION - CON HUELLAS SVG
+======================= */
+
+.mini-cta {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1e5631 0%, #27ae60 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mini-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.mini-cta-title {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.mini-cta-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.mini-cta-button {
+  margin-bottom: 2.5rem;
+}
+
+.btn-mini-cta {
+  padding: 16px 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
+  min-width: 260px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.btn-mini-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-mini-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(230, 126, 34, 0.5);
+  background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+}
+
+.btn-mini-cta:hover::before {
+  left: 100%;
+}
+
+.mini-cta-garantia {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.8rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.mini-cta-garantia:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.mini-cta-garantia i {
+  color: #ffd166;
+  font-size: 1.2rem;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+}
+
+/* HUELLAS SVG CON FONT AWESOME */
+/* HUELLAS SVG CON FONT AWESOME - MÁS MARCADAS */
+.huella-paw {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.25); /* Cambiado de 0.15 a 0.25 */
+  font-size: 2rem; /* Aumentado de 1.8rem */
+  z-index: 1;
+  animation: pawFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3)); /* Aumentada la sombra */
+}
+
+.huella-paw:nth-child(1) {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+  font-size: 2.2rem; /* Aumentado */
+}
+
+.huella-paw:nth-child(2) {
+  top: 25%;
+  left: 15%;
+  animation-delay: 1s;
+  font-size: 1.8rem; /* Aumentado de 1.5rem */
+}
+
+.huella-paw:nth-child(3) {
+  top: 60%;
+  left: 8%;
+  animation-delay: 2s;
+  font-size: 2.3rem; /* Aumentado de 2rem */
+}
+
+.huella-paw:nth-child(4) {
+  top: 70%;
+  left: 18%;
+  animation-delay: 3s;
+  font-size: 1.7rem; /* Aumentado de 1.4rem */
+}
+
+.huella-paw:nth-child(5) {
+  top: 20%;
+  right: 10%;
+  animation-delay: 1.5s;
+  font-size: 1.9rem; /* Aumentado de 1.6rem */
+}
+
+.huella-paw:nth-child(6) {
+  top: 30%;
+  right: 18%;
+  animation-delay: 2.5s;
+  font-size: 2.1rem; /* Aumentado de 1.9rem */
+}
+
+.huella-paw:nth-child(7) {
+  top: 65%;
+  right: 12%;
+  animation-delay: 3.5s;
+  font-size: 2rem; /* Aumentado de 1.7rem */
+}
+
+.huella-paw:nth-child(8) {
+  top: 75%;
+  right: 5%;
+  animation-delay: 4s;
+  font-size: 1.8rem; /* Aumentado de 1.5rem */
+}
+
+/* También aumenta la opacidad en la animación */
+@keyframes pawFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.25; /* Aumentado de 0.15 */
+  }
+  25% {
+    transform: translateY(-10px) rotate(5deg) scale(1.1);
+    opacity: 0.4; /* Aumentado de 0.25 */
+  }
+  50% {
+    transform: translateY(-15px) rotate(0deg) scale(1.15);
+    opacity: 0.3; /* Aumentado de 0.2 */
+  }
+  75% {
+    transform: translateY(-10px) rotate(-5deg) scale(1.1);
+    opacity: 0.4; /* Aumentado de 0.25 */
+  }
+}
+
+/* =======================
+   RESPONSIVE MINI CTA
+======================= */
+
+@media (max-width: 768px) {
+  .mini-cta {
+    padding: 70px 20px;
+  }
+  
+  .mini-cta-title {
+    font-size: 1.9rem;
+  }
+  
+  .mini-cta-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 2.2rem;
+  }
+  
+  .btn-mini-cta {
+    padding: 15px 35px;
+    font-size: 1.15rem;
+    min-width: 240px;
+  }
+  
+  /* Reducir cantidad de huellas en tablet */
+  .huella-paw:nth-child(2),
+  .huella-paw:nth-child(4),
+  .huella-paw:nth-child(6),
+  .huella-paw:nth-child(8) {
+    display: none;
+  }
+  
+  .huella-paw {
+    font-size: 1.7rem; /* Aumentado de 1.4rem */
+  }
+}
+
+@media (max-width: 480px) {
+  .mini-cta {
+    padding: 60px 15px;
+  }
+  
+  .mini-cta-title {
+    font-size: 1.7rem;
+  }
+  
+  .mini-cta-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn-mini-cta {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .mini-cta-garantia {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Ocultar huellas en móvil pequeño */
+  .huella-paw {
+    display: none;
+  }
+}
