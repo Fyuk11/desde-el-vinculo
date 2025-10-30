@@ -17,17 +17,17 @@
         {% endfor %}
       </div>
 
-      <!-- Módulos -->
-      <div class="modulos-grid">
-        <h3 class="modulos-title fade-up delay-4 animate-on-scroll">Lo que vas a aprender:</h3>
+      <!-- Módulos - CLASES RENOMBRADAS -->
+      <div class="presentacion-modulos">
+        <h3 class="presentacion-modulos-title fade-up delay-4 animate-on-scroll">Lo que vas a aprender:</h3>
         
-        <div class="modulos-list">
+        <div class="presentacion-modulos-list">
           {% for modulo in section_data.modulos %}
-          <div class="modulo-item fade-up delay-{{ loop.index + 4 }} animate-on-scroll">
-            <div class="modulo-icon">
+          <div class="presentacion-modulo-item fade-up delay-{{ loop.index + 4 }} animate-on-scroll">
+            <div class="presentacion-modulo-icon">
               <i class="fas fa-paw"></i>
             </div>
-            <span class="modulo-text">{{ modulo }}</span>
+            <span class="presentacion-modulo-text">{{ modulo }}</span>
           </div>
           {% endfor %}
         </div>
@@ -35,7 +35,7 @@
 
       <!-- Mini CTA -->
       <div class="presentacion-cta fade-up delay-10 animate-on-scroll">
-        <p class="cta-text">{{ section_data.cta_text }}</p>
+        <p class="presentacion-cta-text">{{ section_data.cta_text }}</p>
       </div>
 
     </div>
