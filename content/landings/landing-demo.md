@@ -10,7 +10,7 @@ permalink: index.html
 site:
   name: "Educando desde el Vínculo"
   url: "https://desdeelvinculo.netlify.app"
-  verification: "tu-codigo-google-search-console" # Opcional
+  verification: <meta name="google-site-verification" content="YnLXtKM4-w28fluN7Jt4KjhZyx0626GhNaNaI8vtAmA" /> # Opcional
 
 # =======================
 # LOGO Y FAVICON
