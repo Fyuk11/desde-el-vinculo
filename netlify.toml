@@ -1,19 +1,13 @@
 [build]
-  command = "npm run build"
-  publish = "_site"
+command = "npx @11ty/eleventy"
+publish = "_site"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = "/*"
+to = "/index.html"
+status = 200
 
-# Redirección después del envío de formularios
 [[redirects]]
-  from = "/success"
-  to = "/assets/pdf/5-claves-lenguaje-canino.pdf"
-  status = 200
-
-[dev]
-  command = "npx eleventy --serve"
-  targetPort = 8080
-  publish = "_site"
+from = "/success"
+to = "/assets/pdf/5-claves-lenguaje-canino.pdf"
+status = 200
