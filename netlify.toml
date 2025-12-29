@@ -1,13 +1,18 @@
 [build]
-command = "npx @11ty/eleventy"
-publish = "_site"
+  command = "px --yes @11ty/eleventy"
+  publish = "_site"
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [[redirects]]
-from = "/success"
-to = "/assets/pdf/5-claves-lenguaje-canino.pdf"
-status = 200
+  from = "/success"
+  to = "/assets/pdf/5-claves-lenguaje-canino.pdf"
+  status = 200
+
+[dev]
+  command = "npx eleventy --serve"
+  targetPort = 8080
+  publish = "_site"
