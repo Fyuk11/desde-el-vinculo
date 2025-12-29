@@ -2,12 +2,11 @@
   "name": "landing-template",
   "private": true,
   "scripts": {
-    "dev": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve",
-    "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy"
+    "dev": "eleventy --serve",
+    "build": "eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "cross-env": "^7.0.3",
     "gray-matter": "^4.0.3",
     "html-minifier-terser": "^7.1.0",
     "markdown-it": "^13.0.1"

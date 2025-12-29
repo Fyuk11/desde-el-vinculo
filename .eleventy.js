@@ -4,6 +4,8 @@ const matter = require("gray-matter");
 const MarkdownIt = require("markdown-it");
 const htmlmin = require("html-minifier-terser");
 const { DateTime } = require("luxon"); // <-- agregamos Luxon
+const isProduction = process.env.NODE_ENV === 'production' || process.env.CONTEXT === 'production';
+
 
 const md = new MarkdownIt({ html: true, breaks: true, linkify: true });
 
@@ -38,18 +40,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ admin: "admin" });
 
-  // Minificación HTML en producción
-  eleventyConfig.addTransform("htmlmin", async (content, outputPath) => {
-    if (process.env.ELEVENTY_ENV === "production" && outputPath && outputPath.endsWith(".html")) {
-      return await htmlmin.minify(content, {
-        collapseWhitespace: true,
-        removeComments: true,
-        minifyJS: true,
-        minifyCSS: true,
-      });
-    }
-    return content;
-  });
+// Luego cambia la minificación:
+eleventyConfig.addTransform("htmlmin", async (content, outputPath) => {
+  if (isProduction && outputPath && outputPath.endsWith(".html")) {
+    return await htmlmin.minify(content, {
+      collapseWhitespace: true,
+      removeComments: true,
+      minifyJS: true,
+      minifyCSS: true,
+    });
+  }
+  return content;
+});
 
   // Datos globales adicionales
   eleventyConfig.addGlobalData("version", Date.now());
