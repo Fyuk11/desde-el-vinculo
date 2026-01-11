@@ -1,5 +1,5 @@
 [build]
-  command = "npx --yes @11ty/eleventy"
+  command = "npm install && npm run build"
   publish = "_site"
 
 [[redirects]]

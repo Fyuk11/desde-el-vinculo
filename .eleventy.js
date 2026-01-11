@@ -1,23 +1,46 @@
+// .eleventy.js - Versión SIMPLIFICADA sin dependencias externas
 const fs = require("fs");
 const path = require("path");
-const matter = require("gray-matter");
-const MarkdownIt = require("markdown-it");
-const htmlmin = require("html-minifier-terser");
-const { DateTime } = require("luxon"); // <-- agregamos Luxon
-const isProduction = process.env.NODE_ENV === 'production' || process.env.CONTEXT === 'production';
 
+// Detectar producción
+const isProduction = process.env.NODE_ENV === 'production' || 
+                     process.env.CONTEXT === 'production' ||
+                     process.env.NODE_ENV === 'production';
 
-const md = new MarkdownIt({ html: true, breaks: true, linkify: true });
-
-// Carga Markdown
+// Carga Markdown SIMPLIFICADA (sin gray-matter, sin markdown-it)
 function loadMarkdownFile(file) {
   const filepath = path.join(file);
   if (!fs.existsSync(filepath)) return {};
+  
   const raw = fs.readFileSync(filepath, "utf8");
-  const parsed = matter(raw);
+  
+  // Parseo básico de frontmatter (sin gray-matter)
+  const frontmatterMatch = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  
+  if (frontmatterMatch) {
+    const frontmatter = frontmatterMatch[1];
+    const content = frontmatterMatch[2];
+    
+    // Parseo simple de YAML
+    const data = {};
+    frontmatter.split('\n').forEach(line => {
+      const colonIndex = line.indexOf(':');
+      if (colonIndex > -1) {
+        const key = line.substring(0, colonIndex).trim();
+        const value = line.substring(colonIndex + 1).trim();
+        data[key] = value;
+      }
+    });
+    
+    return {
+      ...data,
+      body: content, // Devolvemos el contenido como está
+      _file: filepath,
+    };
+  }
+  
   return {
-    ...parsed.data,
-    body: md.render(parsed.content || ""),
+    body: raw,
     _file: filepath,
   };
 }
@@ -28,30 +51,38 @@ module.exports = function(eleventyConfig) {
     loadMarkdownFile("./content/landings/landing-demo.md")
   );
 
-  // Filtros
-  eleventyConfig.addFilter("markdown", (str) => md.render(str || ""));
-
-  // ✅ Filtro de fecha para sitemap
+  // Filtro de fecha SIMPLIFICADO (sin Luxon)
   eleventyConfig.addFilter("date", (dateObj, format = "yyyy-MM-dd") => {
-    return DateTime.fromJSDate(new Date(dateObj)).toFormat(format);
+    const date = new Date(dateObj);
+    if (format === "yyyy-MM-dd") {
+      return date.toISOString().split('T')[0];
+    }
+    return date.toLocaleDateString();
   });
 
   // Passthrough de assets y CMS
-  eleventyConfig.addPassthroughCopy({ assets: "assets" });
-  eleventyConfig.addPassthroughCopy({ admin: "admin" });
+  eleventyConfig.addPassthroughCopy({ "assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "admin": "admin" });
 
-// Luego cambia la minificación:
-eleventyConfig.addTransform("htmlmin", async (content, outputPath) => {
-  if (isProduction && outputPath && outputPath.endsWith(".html")) {
-    return await htmlmin.minify(content, {
-      collapseWhitespace: true,
-      removeComments: true,
-      minifyJS: true,
-      minifyCSS: true,
-    });
+  // Minificación HTML SOLO en producción (opcional)
+  if (isProduction) {
+    try {
+      const htmlmin = require("html-minifier-terser");
+      eleventyConfig.addTransform("htmlmin", async (content, outputPath) => {
+        if (outputPath && outputPath.endsWith(".html")) {
+          return await htmlmin.minify(content, {
+            collapseWhitespace: true,
+            removeComments: true,
+            minifyJS: true,
+            minifyCSS: true,
+          });
+        }
+        return content;
+      });
+    } catch (e) {
+      console.log("HTML minifier no disponible, continuando sin minificación");
+    }
   }
-  return content;
-});
 
   // Datos globales adicionales
   eleventyConfig.addGlobalData("version", Date.now());
