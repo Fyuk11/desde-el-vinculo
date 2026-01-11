@@ -1,13 +1,13 @@
-echo '[build]
-command = "npx --yes @11ty/eleventy"
-publish = "_site"
+[build]
+  command = "npx --yes @11ty/eleventy"
+  publish = "_site"
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [[redirects]]
-from = "/success"
-to = "/assets/pdf/5-claves-lenguaje-canino.pdf"
-status = 200' | Out-File -FilePath netlify.toml -Encoding UTF8
+  from = "/success"
+  to = "/assets/pdf/5-claves-lenguaje-canino.pdf"
+  status = 200
