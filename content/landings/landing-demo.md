@@ -145,7 +145,7 @@ sections:
     subtitulo: "Las 5 señales que tu perro te da (y estás ignorando sin saberlo)."
     descripcion: "Un regalo para empezar a transformar tu relación hoy mismo. Descubrí cómo leer las señales más importantes de tu perro y mejorá la comunicación en menos de 10 minutos. Ingresá tu email y te lo enviamos al instante."
     form_id: "pdf-regalo-seccion"
-    imagen: "/assets/images/pdf-preview.png"
+    imagen: "/assets/images/pdf-regalo-img.png"
 
   
     # 🟩 SECCIÓN 6 - TESTIMONIOS
