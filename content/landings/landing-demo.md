@@ -56,11 +56,11 @@ sections:
   
   # 🟩 SECCIÓN 1 - HERO
   - type: hero
-    title: "¿Y si tu perro no necesita más órdenes sino que lo comprendas mejor?"
-    subheading: "Transformá la relación con tu perro desde la raíz: educá con consciencia emocional, respeto y comunicación real."
-    subtitle: "El único curso que te enseña a construir el vínculo antes que la obediencia."
+    title: "Deja de intentar que te obedezca. Empezá a entender qué te dice."
+    subheading: "Transforma la convivencia con tu perro a través de la Educación Vincular. "
+    subtitle: "Un enfoque Sistémico-Emocional-Cognitivo para quienes buscan una conexión real, sin gritos ni castigos."
     ctas:
-      - text: "🌱 Educá desde el vínculo"
+      - text: "🌱 QUIERO EL CURSO COMPLETO"
         url: "https://hotmart.com/es/marketplace/productos/educando-desde-el-vinculo-curso-de-educacion-canina-consciente/K102549535T"
       # En la sección HERO agregar:
     pdf_regalo:
