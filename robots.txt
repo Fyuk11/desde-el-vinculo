@@ -1,5 +1,0 @@
----
-permalink: /robots.txt
-eleventyExcludeFromCollections: true
----
-{% include "robots.njk" %}
